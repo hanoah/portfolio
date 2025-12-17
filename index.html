@@ -640,6 +640,18 @@
             filter: drop-shadow(0 0 30px rgba(255, 113, 206, 0.5));
         }
         
+        /* Hide fallback icon when video is present */
+        .video-card .video-fallback {
+            position: absolute;
+            z-index: 1;
+            transition: opacity 150ms ease;
+        }
+        
+        .video-card:hover .video-fallback,
+        .video-card:focus-within .video-fallback {
+            opacity: 0;
+        }
+        
         /* Netflix-style Video Preview */
         .video-card {
             position: relative;
@@ -1009,6 +1021,12 @@
                 display: none;
             }
             
+            .nav-cta {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+                clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+            }
+            
             .palm-left, .palm-right {
                 width: 150px;
             }
@@ -1076,7 +1094,6 @@
         <img src="./assets/images/sphere.png" alt="" class="sphere" aria-hidden="true">
         
         <div class="hero-content">
-            <div class="hero-badge">Open to opportunities</div>
             <h1 class="hero-title">Noah Debrincat</h1>
             <p class="hero-subtitle">LEAD PRODUCT MANAGER</p>
             <p class="hero-tagline">
@@ -1091,7 +1108,7 @@
                     <div class="stat-label">Annual Value Created</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-value">30+</div>
+                    <div class="stat-value">100+</div>
                     <div class="stat-label">Features Shipped</div>
                 </div>
                 <div class="stat">
@@ -1199,8 +1216,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="case-study-visual">
-                        <div class="visual-icon">📞</div>
+                    <div class="case-study-visual video-card">
+                        <img src="./videos/contact-center-poster.jpg" alt="Contact Center Preview" class="video-poster">
+                        <video 
+                            class="video-preview" 
+                            muted 
+                            loop 
+                            playsinline 
+                            preload="metadata"
+                        >
+                            <source src="./videos/contact-center-fast.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </article>
                 
@@ -1233,8 +1259,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="case-study-visual">
-                        <div class="visual-icon">📧</div>
+                    <div class="case-study-visual video-card">
+                        <img src="./videos/delivery-count.png" alt="Email Campaigns Preview" class="video-poster">
+                        <video 
+                            class="video-preview" 
+                            muted 
+                            loop 
+                            playsinline 
+                            preload="metadata"
+                        >
+                            <source src="./videos/campaigns-fast.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </article>
                 
@@ -1267,8 +1302,17 @@
                             </div>
                         </div>
                     </div>
-                    <div class="case-study-visual">
-                        <div class="visual-icon">💜</div>
+                    <div class="case-study-visual video-card">
+                        <img src="./videos/hope4all-poster.jpg" alt="Hope4All Preview" class="video-poster">
+                        <video 
+                            class="video-preview" 
+                            muted 
+                            loop 
+                            playsinline 
+                            preload="metadata"
+                        >
+                            <source src="./videos/hope4all-fast.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </article>
             </div>
