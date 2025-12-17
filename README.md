@@ -4,7 +4,7 @@ Personal portfolio website showcasing my work as a Lead Product Manager.
 
 ## 🚀 Live Site
 
-Visit: [noahdebrincat.github.io](https://noahdebrincat.github.io)
+Visit: noahdebrincat.com
 
 ## ✨ Features
 
