@@ -1,0 +1,49 @@
+# Noah Debrincat - Lead Product Manager
+
+> YC Alum. Former Founder. Building AI-powered healthcare solutions at Curebase.
+
+## Summary
+
+Noah Debrincat is a Lead Product Manager at Curebase, specializing in AI/ML healthcare applications and clinical trial software. He has 5+ years of product experience, founded a medical device startup (Zergo) through Y Combinator, and holds a B.A.Sc. in Nanotechnology Engineering from the University of Waterloo.
+
+## Current Role
+
+Lead Product Manager at Curebase (July 2024 – Present), building clinical trial software used by pharmaceutical companies including Gilead Life Sciences, Walgreens, and Genentech.
+
+## Key Accomplishments
+
+- Built LLM-powered no-code validator that saves 400+ engineering hours annually and enabled 100% Customer Success autonomy
+- Shipped contact center platform 3x faster than industry standard (6 weeks vs. 18-week baseline) with 18 features for 150+ users
+- Architected custom email automation platform replacing a $150K Customer.io contract, enabling $200K annual Walgreens BARDA revenue
+- Partnered with Gilead on Hope4All breast cancer registry achieving 3+ years sustained organic growth with zero marketing spend
+- Created $350K+ annual value across shipped features
+
+## Expertise
+
+- Product Strategy & Execution (0→1 and growth)
+- AI/ML Applications & LLM Integration
+- Healthcare Technology & Clinical Trials
+- Technical Product Management (APIs, data pipelines)
+- Cross-functional Leadership & Stakeholder Management
+- User Research (100+ hours of interviews)
+
+## Career Timeline
+
+- Lead Product Manager, Curebase (July 2024 – Present)
+- Product Manager, Curebase (Oct 2023 – July 2024)
+- Chief of Staff, Curebase (July 2020 – Oct 2023)
+- Founder, Y Combinator (May 2019 – Oct 2019)
+- CEO & Head of Product, Zergo / SannTek Labs (June 2018 – July 2020)
+- B.A.Sc. Nanotechnology Engineering, University of Waterloo (May 2018)
+
+## Contact
+
+- Website: https://noahdebrincat.com
+- Email: debrincatnoah@gmail.com
+- LinkedIn: https://www.linkedin.com/in/noahdebrincat/
+- Phone: (647) 226-2604
+
+## Philosophy
+
+"Move fast, measure everything, never lose sight of the user."
+
