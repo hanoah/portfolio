@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noah Debrincat | Lead Product Manager</title>
+    <meta name="description" content="Lead Product Manager at Curebase. YC Alum. Former Founder. Building AI-powered healthcare solutions that ship 3x faster.">
+    <meta name="author" content="Noah Debrincat">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Noah Debrincat | Lead Product Manager">
+    <meta property="og:description" content="YC Alum. Former Founder. Shipping AI-powered clinical trial software with Gilead, Walgreens, and Genentech.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --vapor-pink: #ff71ce;
+            --vapor-blue: #01cdfe;
+            --vapor-purple: #b967ff;
+            --vapor-cyan: #05ffa1;
+            --vapor-yellow: #fffb96;
+            --vapor-orange: #ff6b35;
+            --deep-purple: #1a0a2e;
+            --midnight: #0d0221;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.75);
+            --text-muted: rgba(255, 255, 255, 0.5);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--midnight);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Scanline Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.1),
+                rgba(0, 0, 0, 0.1) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        /* CRT Vignette */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%);
+            pointer-events: none;
+            z-index: 999;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(13, 2, 33, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 113, 206, 0.2);
+        }
+        
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 10px rgba(5, 255, 161, 0.3);
+        }
+        
+        .nav-links a:hover {
+            color: var(--vapor-pink);
+            text-shadow: 0 0 20px rgba(255, 113, 206, 0.6);
+        }
+        
+        .nav-cta {
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            background: linear-gradient(135deg, var(--vapor-pink), var(--vapor-purple));
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border: none;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+        }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 113, 206, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            padding: 6rem 2rem;
+            background: 
+                linear-gradient(180deg, 
+                    rgba(185, 103, 255, 0.4) 0%, 
+                    rgba(255, 113, 206, 0.2) 30%,
+                    transparent 60%,
+                    rgba(13, 2, 33, 1) 100%
+                ),
+                url('./assets/images/sky-bg.jpg');
+            background-size: cover;
+            background-position: center top;
+        }
+        
+        /* Mountains at bottom */
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 350px;
+            background: url('./assets/images/mountains.png');
+            background-size: cover;
+            background-position: center bottom;
+            pointer-events: none;
+        }
+        
+        /* Palm Trees */
+        .palm-left {
+            position: absolute;
+            left: -30px;
+            bottom: 80px;
+            width: 320px;
+            height: auto;
+            z-index: 5;
+            opacity: 0.9;
+            transform: scaleX(-1);
+            animation: sway 8s ease-in-out infinite;
+            filter: drop-shadow(0 0 30px rgba(255, 113, 206, 0.3));
+        }
+        
+        .palm-right {
+            position: absolute;
+            right: -30px;
+            bottom: 100px;
+            width: 280px;
+            height: auto;
+            z-index: 5;
+            opacity: 0.9;
+            animation: sway 6s ease-in-out infinite reverse;
+            filter: drop-shadow(0 0 30px rgba(1, 205, 254, 0.3));
+        }
+        
+        @keyframes sway {
+            0%, 100% { transform: scaleX(-1) rotate(-2deg); }
+            50% { transform: scaleX(-1) rotate(2deg); }
+        }
+        
+        .palm-right {
+            animation-name: swayRight;
+        }
+        
+        @keyframes swayRight {
+            0%, 100% { transform: rotate(-2deg); }
+            50% { transform: rotate(2deg); }
+        }
+        
+        /* Floating Sphere */
+        .sphere {
+            position: absolute;
+            top: 12%;
+            right: 12%;
+            width: 180px;
+            height: auto;
+            opacity: 0.7;
+            animation: float 6s ease-in-out infinite;
+            z-index: 2;
+            filter: drop-shadow(0 0 40px rgba(185, 103, 255, 0.5));
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-25px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--vapor-cyan);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+        
+        .hero-badge::before {
+            content: '►';
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .hero-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            text-shadow: 
+                0 0 10px var(--vapor-pink),
+                0 0 30px var(--vapor-pink),
+                0 0 60px var(--vapor-purple),
+                4px 4px 0 var(--vapor-blue);
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 
+                    0 0 10px var(--vapor-pink),
+                    0 0 30px var(--vapor-pink),
+                    0 0 60px var(--vapor-purple),
+                    4px 4px 0 var(--vapor-blue);
+            }
+            to {
+                text-shadow: 
+                    0 0 20px var(--vapor-blue),
+                    0 0 40px var(--vapor-blue),
+                    0 0 80px var(--vapor-purple),
+                    4px 4px 0 var(--vapor-pink);
+            }
+        }
+        
+        .hero-subtitle {
+            font-family: 'VT323', monospace;
+            font-size: 1.8rem;
+            color: white;
+            letter-spacing: 0.4em;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 0 var(--vapor-purple);
+        }
+        
+        .hero-tagline {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+            background: rgba(13, 2, 33, 0.6);
+            padding: 1.5rem 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 113, 206, 0.2);
+        }
+        
+        /* Stats Bar */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--vapor-cyan), var(--vapor-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: none;
+        }
+        
+        .stat-label {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        
+        /* Hero CTAs */
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            font-family: 'VT323', monospace;
+            font-size: 1.3rem;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--vapor-pink), var(--vapor-purple));
+            color: white;
+            border: none;
+            clip-path: polygon(15px 0, 100% 0, calc(100% - 15px) 100%, 0 100%);
+        }
+        
+        .btn-primary::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 113, 206, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--vapor-cyan);
+            border: 2px solid var(--vapor-cyan);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(5, 255, 161, 0.1);
+            box-shadow: 0 0 30px rgba(5, 255, 161, 0.3);
+        }
+        
+        /* Sections */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+        
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-label {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            color: var(--vapor-cyan);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        
+        .section-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 2px 2px 0 var(--vapor-purple);
+        }
+        
+        /* Partner Logos */
+        .partners-section {
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--deep-purple) 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 113, 206, 0.15);
+            border-bottom: 1px solid rgba(255, 113, 206, 0.15);
+        }
+        
+        .partners-label {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--text-muted);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+        
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .partner-item {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(185, 103, 255, 0.3);
+            background: rgba(185, 103, 255, 0.05);
+        }
+        
+        /* Case Studies */
+        #case-studies {
+            background: 
+                linear-gradient(180deg, var(--deep-purple) 0%, var(--midnight) 50%, var(--deep-purple) 100%);
+        }
+        
+        .case-studies-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+        
+        .case-study {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: linear-gradient(135deg, rgba(26, 10, 46, 0.9), rgba(13, 2, 33, 0.95));
+            border: 1px solid rgba(255, 113, 206, 0.2);
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .case-study::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue), var(--vapor-purple));
+        }
+        
+        .case-study:hover {
+            border-color: var(--vapor-pink);
+            transform: translateY(-5px);
+            box-shadow: 
+                0 20px 60px rgba(255, 113, 206, 0.2),
+                0 0 30px rgba(185, 103, 255, 0.1);
+        }
+        
+        .case-study-content {
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .case-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+            flex-wrap: wrap;
+        }
+        
+        .case-tag {
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.75rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .case-tag.primary {
+            background: rgba(255, 113, 206, 0.2);
+            color: var(--vapor-pink);
+            border: 1px solid rgba(255, 113, 206, 0.3);
+        }
+        
+        .case-tag.secondary {
+            background: rgba(1, 205, 254, 0.15);
+            color: var(--vapor-blue);
+            border: 1px solid rgba(1, 205, 254, 0.3);
+        }
+        
+        .case-study h3 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            text-shadow: 1px 1px 0 var(--vapor-purple);
+        }
+        
+        .case-study .company {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--vapor-cyan);
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+        
+        .case-study .description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+        
+        .case-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 113, 206, 0.15);
+        }
+        
+        .case-metric {
+            text-align: center;
+        }
+        
+        .case-metric .value {
+            font-family: 'Space Mono', monospace;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--vapor-cyan);
+            text-shadow: 0 0 15px rgba(5, 255, 161, 0.4);
+        }
+        
+        .case-metric .label {
+            font-family: 'VT323', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+        }
+        
+        /* Case Study Visual */
+        .case-study-visual {
+            background: linear-gradient(135deg, rgba(185, 103, 255, 0.1), rgba(255, 113, 206, 0.05));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .case-study-visual::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(255, 113, 206, 0.03) 2px,
+                    rgba(255, 113, 206, 0.03) 4px
+                );
+        }
+        
+        .visual-icon {
+            font-size: 6rem;
+            opacity: 0.4;
+            filter: drop-shadow(0 0 30px rgba(255, 113, 206, 0.5));
+        }
+        
+        /* Netflix-style Video Preview */
+        .video-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 150ms ease;
+        }
+        
+        .video-preview {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 120ms ease;
+        }
+        
+        /* Hover state - video fades in */
+        .video-card:hover .video-preview,
+        .video-card:focus-within .video-preview {
+            opacity: 1;
+        }
+        
+        .video-card:hover .video-poster,
+        .video-card:focus-within .video-poster {
+            opacity: 0;
+        }
+        
+        /* Subtle scale on hover for polish */
+        .case-study:hover .video-card .video-preview {
+            transform: scale(1.02);
+            transition: opacity 120ms ease, transform 400ms ease;
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            background: linear-gradient(180deg, var(--deep-purple) 0%, var(--midnight) 100%);
+            border-top: 1px solid rgba(185, 103, 255, 0.15);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .skill-card {
+            background: rgba(26, 10, 46, 0.6);
+            border: 1px solid rgba(185, 103, 255, 0.2);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-card:hover {
+            border-color: var(--vapor-pink);
+            transform: translateY(-4px);
+        }
+        
+        .skill-card:hover::after {
+            transform: scaleX(1);
+        }
+        
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .skill-card h4 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-card p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        
+        /* About Section */
+        #about {
+            background: 
+                url('./assets/images/scribble-1.png') no-repeat 5% 20%,
+                url('./assets/images/scribble-2.png') no-repeat 95% 80%,
+                linear-gradient(180deg, var(--midnight) 0%, var(--deep-purple) 50%, var(--midnight) 100%);
+            background-size: 150px, 120px, 100%;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        
+        .about-content h3 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 0 var(--vapor-purple);
+        }
+        
+        .about-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-content strong {
+            color: var(--vapor-cyan);
+        }
+        
+        .superpowers {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .superpower {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(26, 10, 46, 0.6);
+            border: 1px solid rgba(255, 113, 206, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .superpower:hover {
+            border-color: var(--vapor-pink);
+            background: rgba(255, 113, 206, 0.05);
+        }
+        
+        .superpower-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .superpower h4 {
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+            color: var(--vapor-pink);
+        }
+        
+        .superpower p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--vapor-pink), var(--vapor-purple), var(--vapor-blue));
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.75rem;
+            padding-left: 1.5rem;
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: '◆';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            font-size: 0.7rem;
+            color: var(--vapor-pink);
+            text-shadow: 0 0 10px var(--vapor-pink);
+        }
+        
+        .timeline-date {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--vapor-cyan);
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-role {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.15rem;
+        }
+        
+        .timeline-company {
+            font-family: 'VT323', monospace;
+            color: var(--text-muted);
+            font-size: 1rem;
+            letter-spacing: 0.1em;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: var(--deep-purple);
+            text-align: center;
+            position: relative;
+        }
+        
+        .contact-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(13, 2, 33, 0.8);
+            border: 1px solid rgba(255, 113, 206, 0.2);
+            padding: 3rem;
+            position: relative;
+        }
+        
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue), var(--vapor-purple));
+        }
+        
+        .contact-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 0 var(--vapor-purple);
+        }
+        
+        .contact-text {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: transparent;
+            border: 1px solid rgba(185, 103, 255, 0.3);
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            border-color: var(--vapor-pink);
+            background: rgba(255, 113, 206, 0.1);
+            box-shadow: 0 0 20px rgba(255, 113, 206, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--midnight);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 113, 206, 0.15);
+            position: relative;
+        }
+        
+        .footer-palms {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-palms img {
+            width: 80px;
+            height: auto;
+            opacity: 0.4;
+            filter: drop-shadow(0 0 15px rgba(255, 113, 206, 0.3));
+        }
+        
+        .ascii-art {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--vapor-purple);
+            white-space: pre;
+            line-height: 1.3;
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-text {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--vapor-blue);
+            letter-spacing: 0.3em;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .case-study {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-study-visual {
+                min-height: 180px;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .palm-left, .palm-right {
+                width: 150px;
+            }
+            
+            .sphere {
+                width: 100px;
+                top: 5%;
+            }
+            
+            .hero::after {
+                height: 180px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .case-metrics {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-palms img {
+                width: 60px;
+            }
+        }
+        
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-logo">Noah Debrincat</div>
+            <ul class="nav-links">
+                <li><a href="#case-studies">CASE STUDIES</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+            <a href="./assets/Noah_Debrincat_Resume.pdf" class="nav-cta" download>DOWNLOAD CV</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Decorative Elements -->
+        <img src="./assets/images/palm-3.png" alt="" class="palm-left" aria-hidden="true">
+        <img src="./assets/images/palm-1.png" alt="" class="palm-right" aria-hidden="true">
+        <img src="./assets/images/sphere.png" alt="" class="sphere" aria-hidden="true">
+        
+        <div class="hero-content">
+            <div class="hero-badge">Open to opportunities</div>
+            <h1 class="hero-title">Noah Debrincat</h1>
+            <p class="hero-subtitle">LEAD PRODUCT MANAGER</p>
+            <p class="hero-tagline">
+                YC Alum. Former Founder. I ship features 3x faster than industry standard 
+                and build AI-powered solutions that save 400+ engineering hours annually.
+                Partnering with Gilead, Walgreens, and Genentech on $1M+ clinical trial projects.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-value">$350K+</div>
+                    <div class="stat-label">Annual Value Created</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">30+</div>
+                    <div class="stat-label">Features Shipped</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">5+</div>
+                    <div class="stat-label">Years in Product</div>
+                </div>
+            </div>
+            
+            <div class="hero-ctas">
+                <a href="#case-studies" class="btn btn-primary">VIEW CASE STUDIES →</a>
+                <a href="mailto:debrincatnoah@gmail.com" class="btn btn-secondary">GET IN TOUCH</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="partners-label">// PARTNERED WITH INDUSTRY LEADERS</div>
+        <div class="partners-grid">
+            <div class="partner-item">Gilead Life Sciences</div>
+            <div class="partner-item">Walgreens Pharma</div>
+            <div class="partner-item">Genentech</div>
+            <div class="partner-item">Y Combinator</div>
+        </div>
+    </section>
+    
+    <!-- Case Studies Section -->
+    <section id="case-studies">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">// FEATURED WORK</div>
+                <h2 class="section-title">Case Studies</h2>
+            </div>
+            
+            <div class="case-studies-grid">
+                <!-- Case Study 1 -->
+                <article class="case-study fade-up">
+                    <div class="case-study-content">
+                        <div class="case-tags">
+                            <span class="case-tag primary">AI/ML INNOVATION</span>
+                            <span class="case-tag secondary">0→1 PRODUCT</span>
+                        </div>
+                        <h3>LLM-POWERED NO-CODE VALIDATOR</h3>
+                        <p class="company">► Curebase • Lead Product Manager • 2024</p>
+                        <p class="description">
+                            Built an AI-powered feature that translates natural language into custom JavaScript 
+                            validators and eligibility logic. Eliminated 400+ engineering hours annually while 
+                            enabling Customer Success to deploy configurations autonomously.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="case-metric">
+                                <div class="value">400+</div>
+                                <div class="label">Eng Hours Saved</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="value">100%</div>
+                                <div class="label">CS Autonomy</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="value">LLM</div>
+                                <div class="label">Powered</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-visual video-card">
+                        <img src="./videos/llm-preview-poster.jpg" alt="LLM Validator Preview" class="video-poster">
+                        <video 
+                            class="video-preview" 
+                            muted 
+                            loop 
+                            playsinline 
+                            preload="metadata"
+                        >
+                            <source src="./videos/llm-preview.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </article>
+                
+                <!-- Case Study 2 -->
+                <article class="case-study fade-up">
+                    <div class="case-study-content">
+                        <div class="case-tags">
+                            <span class="case-tag primary">EXECUTION</span>
+                            <span class="case-tag secondary">PLATFORM</span>
+                        </div>
+                        <h3>CONTACT CENTER PLATFORM</h3>
+                        <p class="company">► Curebase • Lead Product Manager • 2024</p>
+                        <p class="description">
+                            Shipped a complete contact center platform 3x faster than industry standard 
+                            (6 weeks vs. 18-week baseline). Managed 4 engineers across 18 features including 
+                            Postgres migration, RBAC, and real-time dashboards for 150+ site users.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="case-metric">
+                                <div class="value">3x</div>
+                                <div class="label">Faster Delivery</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="value">18</div>
+                                <div class="label">Features</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="value">150+</div>
+                                <div class="label">Users</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-visual">
+                        <div class="visual-icon">📞</div>
+                    </div>
+                </article>
+                
+                <!-- Case Study 3 -->
+                <article class="case-study fade-up">
+                    <div class="case-study-content">
+                        <div class="case-tags">
+                            <span class="case-tag primary">COST OPTIMIZATION</span>
+                            <span class="case-tag secondary">SCALE</span>
+                        </div>
+                        <h3>EMAIL AUTOMATION PLATFORM</h3>
+                        <p class="company">► Curebase • Lead Product Manager • 2024</p>
+                        <p class="description">
+                            Architected a custom email automation platform that replaced a $150K Customer.io contract. 
+                            Enabled $200K annual Walgreens BARDA revenue while scaling to 2.5M participant profiles 
+                            and 3M monthly emails.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="case-metric">
+                                <div class="value">$150K</div>
+                                <div class="label">Cost Avoided</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="value">$200K</div>
+                                <div class="label">Revenue</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="value">3M</div>
+                                <div class="label">Monthly Emails</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-visual">
+                        <div class="visual-icon">📧</div>
+                    </div>
+                </article>
+                
+                <!-- Case Study 4 -->
+                <article class="case-study fade-up">
+                    <div class="case-study-content">
+                        <div class="case-tags">
+                            <span class="case-tag primary">HEALTHCARE</span>
+                            <span class="case-tag secondary">PARTNERSHIP</span>
+                        </div>
+                        <h3>HOPE4ALL CANCER REGISTRY</h3>
+                        <p class="company">► Curebase × Gilead Life Sciences • 2024</p>
+                        <p class="description">
+                            Partnered with Gilead to deliver a breast cancer patient registry with personalized 
+                            insights and community features. Achieved sustained organic user acquisition 
+                            3+ years post-launch with zero marketing spend.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="case-metric">
+                                <div class="value">3+</div>
+                                <div class="label">Years Growth</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="value">$0</div>
+                                <div class="label">Paid Acquisition</div>
+                            </div>
+                            <div class="case-metric">
+                                <div class="value">$1M+</div>
+                                <div class="label">Project Value</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-study-visual">
+                        <div class="visual-icon">💜</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">// EXPERTISE</div>
+                <h2 class="section-title">What I Bring</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">🎯</div>
+                    <h4>STRATEGY</h4>
+                    <p>Roadmap ownership, prioritization, 0→1 and growth</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h4>EXECUTION</h4>
+                    <p>Ship 3x faster with trunk-based dev and agile</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔌</div>
+                    <h4>TECHNICAL</h4>
+                    <p>APIs, data pipelines, hardware/software</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <h4>AI/ML</h4>
+                    <p>LLM applications, automation, AI features</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">💊</div>
+                    <h4>HEALTHCARE</h4>
+                    <p>Clinical trials, compliance, patient UX</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h4>DATA-DRIVEN</h4>
+                    <p>Analytics, experiments, dashboards</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">👥</div>
+                    <h4>LEADERSHIP</h4>
+                    <p>Cross-functional, exec comms, stakeholders</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🔬</div>
+                    <h4>RESEARCH</h4>
+                    <p>100+ hours interviews, personas, discovery</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">// ORIGIN STORY</div>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>FROM ENGINEERING TO PRODUCT</h3>
+                    <p>
+                        My journey started in the lab. As a Nanotechnology Engineering grad from 
+                        University of Waterloo, I learned to bridge deep technical complexity with 
+                        real-world applications. That foundation became invaluable when I founded 
+                        Zergo—a medical device startup that went through Y Combinator.
+                    </p>
+                    <p>
+                        Running a startup taught me that brilliant technology means nothing without 
+                        product-market fit. After 100+ hours of user interviews and three major pivots, 
+                        I discovered my passion: translating user needs into products that ship and scale.
+                    </p>
+                    <p>
+                        Today at Curebase, I partner with pharma giants like Gilead and Genentech to 
+                        build clinical trial software reaching millions. My philosophy: 
+                        <strong>move fast, measure everything, never lose sight of the user.</strong>
+                    </p>
+                    
+                    <div class="superpowers">
+                        <div class="superpower">
+                            <div class="superpower-icon">⚡</div>
+                            <div>
+                                <h4>I TURN AMBIGUITY INTO SHIPPED PRODUCTS</h4>
+                                <p>From undefined problem to production in weeks, not months</p>
+                            </div>
+                        </div>
+                        <div class="superpower">
+                            <div class="superpower-icon">🔗</div>
+                            <div>
+                                <h4>I BRIDGE ENGINEERING AND BUSINESS</h4>
+                                <p>Technical depth meets strategic thinking</p>
+                            </div>
+                        </div>
+                        <div class="superpower">
+                            <div class="superpower-icon">🎯</div>
+                            <div>
+                                <h4>I OBSESS OVER IMPACT METRICS</h4>
+                                <p>Every feature tied to measurable outcomes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">July 2024 – Present</div>
+                        <div class="timeline-role">Lead Product Manager</div>
+                        <div class="timeline-company">Curebase</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Oct 2023 – July 2024</div>
+                        <div class="timeline-role">Product Manager</div>
+                        <div class="timeline-company">Curebase</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">July 2020 – Oct 2023</div>
+                        <div class="timeline-role">Chief of Staff</div>
+                        <div class="timeline-company">Curebase</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">May 2019 – Oct 2019</div>
+                        <div class="timeline-role">Founder</div>
+                        <div class="timeline-company">Y Combinator</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">June 2018 – July 2020</div>
+                        <div class="timeline-role">CEO, Head of Product</div>
+                        <div class="timeline-company">Zergo (SannTek Labs)</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">May 2018</div>
+                        <div class="timeline-role">B.A.Sc. Nanotech Engineering</div>
+                        <div class="timeline-company">University of Waterloo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="contact-card">
+                <h2 class="contact-title">LET'S CONNECT</h2>
+                <p class="contact-text">
+                    Interested in healthcare, AI/ML, or high-growth startups? Let's build something together.
+                </p>
+                <div class="contact-links">
+                    <a href="mailto:debrincatnoah@gmail.com" class="contact-link">
+                        📧 debrincatnoah@gmail.com
+                    </a>
+                    <a href="https://www.linkedin.com/in/noahdebrincat/" target="_blank" class="contact-link">
+                        💼 LinkedIn
+                    </a>
+                    <a href="tel:+16472262604" class="contact-link">
+                        📱 (647) 226-2604
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-palms">
+            <img src="./assets/images/palm-4.png" alt="" aria-hidden="true">
+            <img src="./assets/images/palm-5.png" alt="" aria-hidden="true">
+            <img src="./assets/images/palm-6.png" alt="" aria-hidden="true">
+        </div>
+        <div class="ascii-art">
+╔═══════════════════════════════════════════╗
+║   T H A N K S   F O R   V I S I T I N G   ║
+╚═══════════════════════════════════════════╝
+        </div>
+        <p class="footer-text">© 2025 NOAH DEBRINCAT</p>
+    </footer>
+    
+    <!-- Scroll Animation -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        
+        // Netflix-style hover video previews
+        document.querySelectorAll('.video-card').forEach(card => {
+            const video = card.querySelector('.video-preview');
+            if (!video) return;
+
+            const playVideo = () => {
+                video.currentTime = 0;
+                video.play().catch(() => {}); // Silently handle autoplay restrictions
+            };
+
+            const pauseVideo = () => {
+                video.pause();
+                video.currentTime = 0;
+            };
+
+            // Desktop hover
+            card.addEventListener('mouseenter', playVideo);
+            card.addEventListener('mouseleave', pauseVideo);
+
+            // Keyboard accessibility
+            card.addEventListener('focusin', playVideo);
+            card.addEventListener('focusout', pauseVideo);
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
