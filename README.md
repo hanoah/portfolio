@@ -21,25 +21,17 @@ Visit: noahdebrincat.com
 │   ├── Noah_Debrincat_Resume.pdf   # Downloadable resume
 │   └── images/                     # Decorative assets
 ├── videos/
-│   ├── llm-preview.mp4             # Case study video
-│   └── llm-preview-poster.jpg      # Video thumbnail
+│   ├── llm-preview.mp4             # LLM No-Code Validator
+│   ├── llm-preview-poster.jpg
+│   ├── contact-center-fast.mp4    # Contact Center Platform
+│   ├── contact-center-poster.jpg
+│   ├── campaigns-fast.mp4         # Email Automation Platform
+│   ├── delivery-count.png
+│   ├── hope4all-fast.mp4          # Hope4All Cancer Registry
+│   └── hope4all-poster.jpg
 ├── .gitignore
 └── README.md
 ```
-
-## 🛠️ Local Development
-
-```bash
-npx serve .
-```
-
-## 🚢 Deploy to GitHub Pages
-
-1. Create repo: `noahdebrincat.github.io`
-2. Upload files
-3. Settings → Pages → Deploy from main branch
-4. Done!
-
 ## 📬 Contact
 
 - **Email:** debrincatnoah@gmail.com
