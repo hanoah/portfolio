@@ -1,0 +1,45 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Development
+node_modules/
+.env
+.env.local
+
+# Archived/draft files (not for deployment)
+_archive/
+45 Free Vaporwave Elements/
+reference-html/
+
+# Large source videos (keep only optimized *-fast.mp4 versions)
+videos/video1a.mp4
+videos/video1b.mp4
+videos/output.mp4
+videos/hope4all.mp4
+videos/campaigns.mp4
+videos/contact-center.mp4
+
+# Working files
+design-ref-*
+prompt
+*.sh
+road-trip/voice-transcript/
+
+# Cursor
+.cursor/
