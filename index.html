@@ -36,8 +36,6 @@
             "@type": "Organization",
             "name": "Curebase"
         },
-        "email": "debrincatnoah@gmail.com",
-        "telephone": "+16472262604",
         "sameAs": [
             "https://www.linkedin.com/in/noahdebrincat/"
         ],
@@ -1009,6 +1007,47 @@
             box-shadow: 0 0 20px rgba(255, 113, 206, 0.2);
         }
         
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            padding: 1rem 1.25rem;
+            background: rgba(13, 2, 33, 0.8);
+            border: 1px solid rgba(185, 103, 255, 0.3);
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--vapor-pink);
+            box-shadow: 0 0 15px rgba(255, 113, 206, 0.2);
+        }
+        
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .contact-form button {
+            align-self: center;
+            cursor: pointer;
+        }
+        
         /* Footer */
         footer {
             background: var(--midnight);
@@ -1132,6 +1171,7 @@
             <ul class="nav-links">
                 <li><a href="#case-studies">CASE STUDIES</a></li>
                 <li><a href="#about">ABOUT</a></li>
+                <li><a href="./blog/">BLOG</a></li>
                 <li><a href="#contact">CONTACT</a></li>
             </ul>
             <a href="./assets/Noah_Debrincat_Resume.pdf" class="nav-cta" download>DOWNLOAD CV</a>
@@ -1172,7 +1212,7 @@
             
             <div class="hero-ctas">
                 <a href="#case-studies" class="btn btn-primary">VIEW CASE STUDIES →</a>
-                <a href="mailto:debrincatnoah@gmail.com" class="btn btn-secondary">GET IN TOUCH</a>
+                <a href="#contact" class="btn btn-secondary">GET IN TOUCH</a>
             </div>
         </div>
     </section>
@@ -1521,15 +1561,15 @@
                 <p class="contact-text">
                     Interested in healthcare, AI/ML, or high-growth startups? Let's build something together.
                 </p>
+                <form action="https://formspree.io/f/xjgwarpe" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="btn btn-primary">SEND MESSAGE →</button>
+                </form>
                 <div class="contact-links">
-                    <a href="mailto:debrincatnoah@gmail.com" class="contact-link">
-                        📧 debrincatnoah@gmail.com
-                    </a>
                     <a href="https://www.linkedin.com/in/noahdebrincat/" target="_blank" class="contact-link">
                         💼 LinkedIn
-                    </a>
-                    <a href="tel:+16472262604" class="contact-link">
-                        📱 (647) 226-2604
                     </a>
                 </div>
             </div>

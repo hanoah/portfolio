@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO -->
+    <title>Blog | Noah Debrincat</title>
+    <meta name="description" content="Blog posts by Noah Debrincat. Travel, tech, and life observations.">
+    <meta name="author" content="Noah Debrincat">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://noahdebrincat.com/blog/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Blog | Noah Debrincat">
+    <meta property="og:description" content="Blog posts by Noah Debrincat. Travel, tech, and life observations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://noahdebrincat.com/blog/">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Blog | Noah Debrincat">
+    <meta name="twitter:description" content="Blog posts by Noah Debrincat. Travel, tech, and life observations.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --vapor-pink: #ff71ce;
+            --vapor-blue: #01cdfe;
+            --vapor-purple: #b967ff;
+            --vapor-cyan: #05ffa1;
+            --vapor-yellow: #fffb96;
+            --vapor-orange: #ff6b35;
+            --deep-purple: #1a0a2e;
+            --midnight: #0d0221;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--midnight);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        /* Subtle Scanline Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.05) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        /* Top Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(13, 2, 33, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 113, 206, 0.2);
+        }
+        
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .back-link {
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: var(--vapor-pink);
+            text-shadow: 0 0 15px rgba(255, 113, 206, 0.5);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--vapor-pink);
+        }
+        
+        /* Main Content */
+        .main-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem;
+        }
+        
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .page-label {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            color: var(--vapor-cyan);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .page-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 
+                0 0 10px var(--vapor-pink),
+                0 0 30px var(--vapor-pink),
+                3px 3px 0 var(--vapor-blue);
+        }
+        
+        /* Blog Posts Grid */
+        .posts-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .post-card {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 2rem;
+            background: linear-gradient(135deg, rgba(26, 10, 46, 0.9), rgba(13, 2, 33, 0.95));
+            border: 1px solid rgba(255, 113, 206, 0.2);
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .post-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue), var(--vapor-purple));
+        }
+        
+        .post-card:hover {
+            border-color: var(--vapor-pink);
+            transform: translateY(-4px);
+            box-shadow: 
+                0 15px 40px rgba(255, 113, 206, 0.2),
+                0 0 30px rgba(185, 103, 255, 0.1);
+        }
+        
+        .post-thumbnail {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border: 1px solid rgba(255, 113, 206, 0.3);
+        }
+        
+        .post-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .post-meta {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--vapor-cyan);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .post-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+            text-shadow: 1px 1px 0 var(--vapor-purple);
+        }
+        
+        .post-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .post-tag {
+            font-family: 'VT323', monospace;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.6rem;
+            background: rgba(255, 113, 206, 0.15);
+            color: var(--vapor-pink);
+            border: 1px solid rgba(255, 113, 206, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255, 113, 206, 0.15);
+            margin-top: 4rem;
+        }
+        
+        .footer-text {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--vapor-blue);
+            letter-spacing: 0.2em;
+        }
+        
+        .footer-link {
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--vapor-pink);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .post-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .post-thumbnail {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../" class="back-link">← BACK TO SITE</a>
+            <ul class="nav-links">
+                <li><a href="../#case-studies">CASE STUDIES</a></li>
+                <li><a href="../#about">ABOUT</a></li>
+                <li><a href="../#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="page-header">
+            <div class="page-label">// WRITINGS</div>
+            <h1 class="page-title">Blog</h1>
+        </header>
+        
+        <div class="posts-grid">
+            <!-- Road Trip Post -->
+            <a href="../road-trip/" class="post-card">
+                <img src="../road-trip/videos/2026-01-18_162346_sedona-landscape.png" alt="Sedona landscape" class="post-thumbnail">
+                <div class="post-content">
+                    <div class="post-meta">JAN 2026 • 15 MIN READ</div>
+                    <h2 class="post-title">4,400 KM ON ROUTE 66</h2>
+                    <p class="post-excerpt">
+                        Ontario to California in 6 days. Dogs, diners, desert, and the best meal of the trip at a health food store I'd never heard of.
+                    </p>
+                    <div class="post-tags">
+                        <span class="post-tag">TRAVEL</span>
+                        <span class="post-tag">ROUTE 66</span>
+                        <span class="post-tag">ROAD TRIP</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">© 2026 NOAH DEBRINCAT</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="../" class="footer-link" style="font-family: 'VT323', monospace; letter-spacing: 0.1em;">← BACK TO MAIN SITE</a>
+        </p>
+    </footer>
+</body>
+</html>

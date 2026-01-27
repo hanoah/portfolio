@@ -1,0 +1,1214 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Pack -->
+    <title>4,400 km on Route 66: Ontario to California in 6 Days</title>
+    <meta name="description" content="A 6-day road trip from snowy Ontario to sunny California via Route 66. Dogs, diners, Cadillac Ranch, and zero regrets.">
+    <meta name="author" content="Noah Debrincat">
+    <meta name="keywords" content="Route 66, road trip, Ontario to California, cross country drive, Sedona, Albuquerque, Oklahoma City, travel blog">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://noahdebrincat.com/road-trip/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="4,400 km on Route 66: Ontario to California in 6 Days">
+    <meta property="og:description" content="A 6-day road trip from snowy Ontario to sunny California via Route 66. Dogs, diners, Cadillac Ranch, and zero regrets.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://noahdebrincat.com/road-trip/">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="4,400 km on Route 66: Ontario to California in 6 Days">
+    <meta name="twitter:description" content="A 6-day road trip from snowy Ontario to sunny California via Route 66. Dogs, diners, Cadillac Ranch, and zero regrets.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&amp;family=Syncopate:wght@400;700&amp;family=Space+Mono:wght@400;700&amp;family=Outfit:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --vapor-pink: #ff71ce;
+            --vapor-blue: #01cdfe;
+            --vapor-purple: #b967ff;
+            --vapor-cyan: #05ffa1;
+            --vapor-yellow: #fffb96;
+            --vapor-orange: #ff6b35;
+            --deep-purple: #1a0a2e;
+            --midnight: #0d0221;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--midnight);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        /* Subtle Scanline Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.05) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        /* Top Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(13, 2, 33, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 113, 206, 0.2);
+        }
+        
+        .nav-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-back {
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .nav-back:hover {
+            color: var(--vapor-pink);
+            text-shadow: 0 0 15px rgba(255, 113, 206, 0.5);
+        }
+        
+        .nav-days {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
+        }
+        
+        .nav-days a {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 0.4rem 0.6rem;
+            border: 1px solid rgba(185, 103, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-days a:hover {
+            color: var(--vapor-pink);
+            border-color: var(--vapor-pink);
+            background: rgba(255, 113, 206, 0.1);
+        }
+        
+        /* Hero Header */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: 
+                linear-gradient(180deg, 
+                    rgba(185, 103, 255, 0.3) 0%, 
+                    rgba(255, 113, 206, 0.15) 30%,
+                    transparent 60%,
+                    var(--midnight) 100%
+                ),
+                linear-gradient(135deg, var(--deep-purple) 0%, var(--midnight) 100%);
+            position: relative;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, var(--midnight));
+            pointer-events: none;
+        }
+        
+        .hero-label {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            color: var(--vapor-cyan);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            text-shadow: 
+                0 0 10px var(--vapor-pink),
+                0 0 30px var(--vapor-pink),
+                3px 3px 0 var(--vapor-blue);
+            max-width: 800px;
+        }
+        
+        /* Context Box */
+        .context-box {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 700px;
+            margin: 2rem auto 0;
+            padding: 1.5rem 2rem;
+            background: rgba(26, 10, 46, 0.8);
+            border: 1px solid rgba(255, 113, 206, 0.25);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .context-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue), var(--vapor-purple));
+        }
+        
+        .context-item {
+            text-align: center;
+        }
+        
+        .context-label {
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+        
+        .context-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95rem;
+            color: var(--vapor-cyan);
+        }
+        
+        /* Main Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .hook {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(185, 103, 255, 0.08);
+            border-left: 3px solid var(--vapor-pink);
+        }
+        
+        /* Day Sections */
+        .day-section {
+            margin-bottom: 4rem;
+            scroll-margin-top: 80px;
+        }
+        
+        .day-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .day-number {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--vapor-pink);
+            background: rgba(255, 113, 206, 0.15);
+            padding: 0.5rem 1rem;
+            letter-spacing: 0.1em;
+            border: 1px solid rgba(255, 113, 206, 0.3);
+        }
+        
+        .day-route {
+            font-family: 'VT323', monospace;
+            font-size: 1.3rem;
+            color: var(--vapor-cyan);
+            letter-spacing: 0.1em;
+        }
+        
+        .day-content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .day-content strong {
+            color: var(--vapor-cyan);
+        }
+        
+        /* Subsection Headers */
+        .subsection {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--vapor-purple);
+            letter-spacing: 0.1em;
+            margin: 2rem 0 1rem;
+            text-transform: uppercase;
+        }
+        
+        /* Tip Boxes */
+        .tip {
+            background: rgba(5, 255, 161, 0.08);
+            border: 1px solid rgba(5, 255, 161, 0.25);
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .tip::before {
+            content: "► TIP: ";
+            font-family: 'VT323', monospace;
+            color: var(--vapor-cyan);
+            letter-spacing: 0.1em;
+        }
+        
+        /* Photo Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .photo-grid.single {
+            grid-template-columns: 1fr;
+        }
+        
+        .photo-grid.triple {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .photo-card {
+            position: relative;
+            overflow: hidden;
+            background: rgba(26, 10, 46, 0.6);
+            border: 1px solid rgba(185, 103, 255, 0.2);
+        }
+        
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .photo-card:hover img:not(.video-poster) {
+            transform: scale(1.05);
+        }
+        
+        /* Video Card - Netflix-style hover preview */
+        .video-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .video-card .video-poster {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+            transition: opacity 150ms ease;
+        }
+        
+        .video-card .video-preview {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 120ms ease;
+        }
+        
+        .video-card:hover .video-preview {
+            opacity: 1;
+        }
+        
+        .video-card:hover .video-poster {
+            opacity: 0;
+        }
+        
+        /* Play button indicator */
+        .video-card::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 113, 206, 0.85);
+            border-radius: 50%;
+            z-index: 10;
+            pointer-events: none;
+            transition: opacity 200ms ease, transform 200ms ease;
+        }
+        
+        .video-card::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-40%, -50%);
+            border-style: solid;
+            border-width: 12px 0 12px 20px;
+            border-color: transparent transparent transparent white;
+            z-index: 11;
+            pointer-events: none;
+            transition: opacity 200ms ease;
+        }
+        
+        .video-card:hover::before,
+        .video-card:hover::after {
+            opacity: 0;
+        }
+        
+        .photo-caption {
+            font-family: 'VT323', monospace;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            padding: 0.75rem 1rem;
+            background: rgba(13, 2, 33, 0.9);
+            letter-spacing: 0.05em;
+        }
+        
+        /* Featured Section */
+        .featured-section {
+            background: linear-gradient(135deg, rgba(26, 10, 46, 0.9), rgba(13, 2, 33, 0.95));
+            border: 1px solid rgba(255, 113, 206, 0.2);
+            padding: 2rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .featured-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue), var(--vapor-purple));
+        }
+        
+        .featured-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            color: var(--vapor-pink);
+        }
+        
+        /* Lists */
+        .content ul, .content ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .content li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .content li::marker {
+            color: var(--vapor-cyan);
+        }
+        
+        /* Itinerary Table */
+        .itinerary {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .itinerary th {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--vapor-cyan);
+            text-align: left;
+            padding: 0.75rem;
+            border-bottom: 2px solid rgba(255, 113, 206, 0.3);
+            letter-spacing: 0.1em;
+        }
+        
+        .itinerary td {
+            padding: 0.75rem;
+            border-bottom: 1px solid rgba(185, 103, 255, 0.15);
+            color: var(--text-secondary);
+        }
+        
+        .itinerary tr:hover {
+            background: rgba(255, 113, 206, 0.05);
+        }
+        
+        /* Quality Pass Section */
+        .quality-pass {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(185, 103, 255, 0.2);
+        }
+        
+        .quality-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .quality-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--vapor-purple);
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+        
+        .alt-hook {
+            background: rgba(26, 10, 46, 0.6);
+            border: 1px solid rgba(185, 103, 255, 0.2);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+        
+        .alt-hook-label {
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            color: var(--vapor-cyan);
+            font-style: normal;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-caption {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(185, 103, 255, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--deep-purple);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 113, 206, 0.15);
+        }
+        
+        .footer-text {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--vapor-blue);
+            letter-spacing: 0.3em;
+        }
+        
+        .footer-back {
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(5, 255, 161, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-back:hover {
+            border-color: var(--vapor-pink);
+            background: rgba(255, 113, 206, 0.1);
+            color: var(--vapor-pink);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-days {
+                display: none;
+            }
+            
+            .context-box {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo-grid.triple {
+                grid-template-columns: 1fr;
+            }
+            
+            .itinerary {
+                font-size: 0.8rem;
+            }
+            
+            .itinerary th, .itinerary td {
+                padding: 0.5rem;
+            }
+        }
+        
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body data-cursor-ref="ref-o3hshgemt9b">
+    <!-- Navigation -->
+    <nav class="nav" role="navigation" data-cursor-ref="ref-mrf9809kvje">
+        <div class="nav-inner" data-cursor-ref="ref-wprejkmfqsl">
+            <a href="/" class="nav-back" data-cursor-ref="ref-f15guezo9w9">← HOME</a>
+            <a href="../blog/" class="nav-back" style="margin-left: 1.5rem;">BLOG</a>
+            <ul class="nav-days" data-cursor-ref="ref-o2rh7dj141">
+                <li data-cursor-ref="ref-sclluhed6va"><a href="#day1" data-cursor-ref="ref-ul96a52sirh">D1</a></li>
+                <li data-cursor-ref="ref-o9m7xs5jmxf"><a href="#day2" data-cursor-ref="ref-sygiqi77p5">D2</a></li>
+                <li data-cursor-ref="ref-ckjcbw8xwte"><a href="#day3" data-cursor-ref="ref-1gn42lz3dr4">D3</a></li>
+                <li data-cursor-ref="ref-0kq2ym9jxkwg"><a href="#day4" data-cursor-ref="ref-s855oiafi">D4</a></li>
+                <li data-cursor-ref="ref-qh8x2sfhpop"><a href="#day5" data-cursor-ref="ref-7i0ej8ikdwb">D5</a></li>
+                <li data-cursor-ref="ref-it0zu9704h"><a href="#day6" data-cursor-ref="ref-3z4z5wpdpzb">D6</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
+    <header class="hero" data-cursor-ref="ref-zng6qebqui">
+        <div class="hero-label">// ROAD TRIP LOG</div>
+        <h1 class="hero-title" data-cursor-ref="ref-fy9aq0jy5fo">4,400 km on Route 66: Ontario to California in 6 Days</h1>
+        
+        <div class="context-box">
+            <div class="context-item">
+                <div class="context-label">When</div>
+                <div class="context-value">Jan 14–19, 2026</div>
+            </div>
+            <div class="context-item">
+                <div class="context-label">Distance</div>
+                <div class="context-value">4,400 km</div>
+            </div>
+            <div class="context-item">
+                <div class="context-label">Route</div>
+                <div class="context-value">Ontario → California</div>
+            </div>
+            <div class="context-item">
+                <div class="context-label">Vibe</div>
+                <div class="context-value">Dogs, Diners, Desert</div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="content" data-cursor-ref="ref-az0hcrj2h6w">
+        <!-- Hook -->
+        <div class="hook fade-up visible">
+            We left in a snowstorm. By the time we hit the border, the highway was an absolute mess—trucks backed up as far as we could see, everyone crawling toward the crossing. Six days and 4,400 kilometers later, I was checking tire pressure in the California sun, watching the dogs sprawl on warm pavement for the first time in months. No tours booked. No reservations we had to rush for. Just the road, Route 66, and one of the best diners I've ever eaten at in a place I'd never heard of.
+        </div>
+        
+        <!-- Day 1 -->
+        <section id="day1" class="day-section fade-up visible" data-cursor-ref="ref-1xvkzbms8n8">
+            <div class="day-header">
+                <span class="day-number">DAY 01</span>
+                <span class="day-route">Kemble → Sarnia</span>
+            </div>
+            <div class="day-content">
+                <p>The forecast said snow, and my parents weren't subtle about making sure we left early. Thank God we listened. By mid-afternoon, conditions had deteriorated enough that we were grateful for every minute of head start.</p>
+                
+                <p>Slept well at the Hampton Inn. Got up early the next morning knowing the longest leg was ahead.</p>
+                
+                <div class="tip">Leave earlier than you think if you're crossing in winter. The buffer saved us.</div>
+            </div>
+        </section>
+        
+        <!-- Day 2 -->
+        <section id="day2" class="day-section fade-up visible" data-cursor-ref="ref-zqeuj7xhxgd">
+            <div class="day-header">
+                <span class="day-number">DAY 02</span>
+                <span class="day-route">Sarnia → St. Louis</span>
+            </div>
+            <div class="day-content">
+                <p>This was the long one. Nearly 1,000 km. The border crossing was totally fine—dodged some awkward commentary with the patrol, got our I-94s signed, and we were through.</p>
+                
+                <p>Stopped in Indianapolis around lunch. Not the most impressive stop, to be honest. Not much going on there. But we did find a bridge that had been paved over with art sculptures—some kind of park right near a zoo. Nice place to stretch our legs and breathe for a bit. Didn't see any animals.</p>
+
+                <div class="photo-grid triple">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-15_194315_st-louis-bar-with-mom.png" alt="Bar moment with mom">
+                        <div class="photo-caption">Bar moment with mom</div>
+                    </div>
+                    <div class="photo-card video-card">
+                        <img src="./videos/poster_st-louis-bridge-drive.jpg" alt="Night drive through St. Louis" class="video-poster">
+                        <video class="video-preview" muted loop playsinline preload="metadata">
+                            <source src="./videos/2026-01-15_234830_st-louis-bridge-stlouis-drive.mp4" type="video/mp4">
+                        </video>
+                        <div class="photo-caption">Night drive through St. Louis</div>
+                    </div>
+                    <div class="photo-card video-card">
+                        <img src="./videos/poster_st-louis-clapping-lights.jpg" alt="Late night at the hotel" class="video-poster">
+                        <video class="video-preview" muted loop playsinline preload="metadata">
+                            <source src="./videos/2026-01-16_010235_st-louis-clapping-lights.mp4" type="video/mp4">
+                        </video>
+                        <div class="photo-caption">Late night at the hotel</div>
+                    </div>
+                </div>
+                
+                <h4 class="subsection">The Bar Moment</h4>
+                <p>Arrived in St. Louis and checked into the hotel. Later that night, I sat down at the bar with my mom for non-alcoholic drinks. This sounds mundane but it hit different. It's not often you just get to sit with your mom at a bar and talk about life. Felt very human. I'm going to remember that for a while.</p>
+                
+                <p>One note: I asked about walking to the Arch at sunset and the front desk gently suggested that might not be the best idea "with current times." First and only time on the trip where we caught wind of anything feeling less than completely safe. Take it with a grain of salt—could've been general caution, could've been specific. We stayed in.</p>
+                
+                <div class="tip">Book a hotel with a decent bar. The unexpected moments there were some of the best.</div>
+            </div>
+        </section>
+        
+        <!-- Day 3 -->
+        <section id="day3" class="day-section fade-up visible" data-cursor-ref="ref-1rp4wpzitz7j">
+            <div class="day-header">
+                <span class="day-number">DAY 03</span>
+                <span class="day-route">St. Louis → Oklahoma City</span>
+            </div>
+            <div class="day-content">
+                <p>This is when Route 66 started. And honestly, about 16 hours in with the dogs at this point—they were absolute rock stars. Behaved beautifully the whole way.</p>
+                
+                <div class="photo-grid triple">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-16_112640_springfield-mo-sleeping-lenny.png" alt="Lenny sleeping in Springfield, MO">
+                        <div class="photo-caption">Lenny sleeping in Springfield, MO</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-16_130633_galena-ks-route66-Queens-Bee.png" alt="Queen's Bee, Joplin">
+                        <div class="photo-caption">Queen's Bee, Joplin</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-16_135415_missouri-byway-route66-route66-pose.png" alt="Route 66 pose">
+                        <div class="photo-caption">Route 66 pose</div>
+                    </div>
+                </div>
+                
+                <h4 class="subsection">Cars on Route 66</h4>
+                <p>Stopped at Cars on Route 66—the actual place that inspired the Pixar movie. There's a whole backstory here. The pit stop inspired the creation of Mater (Tow Mater). There's a build out there called Tow Mater. One of the famous guys in town could turn his double-jointed legs all the way around—that's what inspired Mater's ability to drive backwards as well as forwards.</p>
+                
+                <p>The red fire truck character, Red, was supposed to be voiced by one of the film's creators who loved fire trucks. He passed away during production, which is why Red doesn't have many lines in the final movie. They kept him quiet as a tribute.</p>
+                
+                <p>The shop is owned by a husband-wife duo now. It used to be called "Ladies on Route 66" because four women ran it. The current owner's friend—an investor—agreed to invest only if they changed the name. He didn't want to own a place called Ladies on Route 66. So they switched it to Cars on Route 66. She used to be the town clerk. Her husband used to be the town sheriff. Now he flips burgers in the back. They have food, too.</p>
+                
+                <p>All of this is documented in the "Art of Cars" book. Every Disney movie has one. Worth looking up.</p>
+                
+                <h4 class="subsection">Suzanne's / Queen's Bee</h4>
+                <p><strong>Restaurant of the trip.</strong> Right in Joplin, we stopped at Suzanne's Natural Foods with Queen's Bee Coffee and Creperie inside. Completely fresh food. Huge servings. So accommodating to the dogs. The store itself was interesting enough to browse. Could not recommend it enough. If you're driving through Joplin, stop here.</p>
+                
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-16_fordson-hotel_oklahoma-city-fordson-hotel.jpeg" alt="Fordson Hotel, Oklahoma City">
+                        <div class="photo-caption">Fordson Hotel, Oklahoma City</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-16_fordson-hotel-2_oklahoma-city-fordson-hotel.jpeg" alt="Fordson Hotel, Oklahoma City">
+                        <div class="photo-caption">Fordson Hotel, Oklahoma City</div>
+                    </div>
+                </div>
+                
+                <h4 class="subsection">The Fordson Hotel</h4>
+                <p>Oklahoma City's highlight: the Fordson Hotel. Used to be an old truck factory. High ceilings, swivel tables that point to the history, great atmosphere. My family went to the hotel restaurant for a nice dinner—highly recommend. But we had dietary restrictions and the dogs to deal with, so we walked 10 minutes to <strong>Loaded Bowls</strong>.</p>
+                
+                <p>Loaded Bowls was genuinely delicious. The portions were massive. Their soy curls are so well seasoned. Very much recommend if you need something hearty and plant-based.</p>
+                
+                <div class="tip">Loaded Bowls in OKC—huge portions, excellent soy curls. 10-minute walk from Fordson.</div>
+            </div>
+        </section>
+        
+        <!-- Day 4 -->
+        <section id="day4" class="day-section fade-up visible" data-cursor-ref="ref-auafg3l0zy8">
+            <div class="day-header">
+                <span class="day-number">DAY 04</span>
+                <span class="day-route">Oklahoma City → Albuquerque</span>
+            </div>
+            <div class="day-content">
+                <div class="photo-grid single">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-17_065315_oklahoma-city-fordson-hotel.png" alt="Morning at the Fordson">
+                        <div class="photo-caption">Morning at the Fordson</div>
+                    </div>
+                </div>
+                
+                <p>The Texas Panhandle. Not much to see, honestly. A lot of empty fields. I did get a very big pickle at one of the stops, which was the highlight of several hours of driving.</p>
+                
+                <div class="photo-grid triple">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-17_094811_texas-panhandle-texas-panhandle.png" alt="Texas Panhandle">
+                        <div class="photo-caption">Texas Panhandle</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-17_131955_amarillo-cadillac-ranch-amarillo.jpeg" alt="Cadillac Ranch, Amarillo">
+                        <div class="photo-caption">Cadillac Ranch, Amarillo</div>
+                    </div>
+                    <div class="photo-card video-card">
+                        <img src="./videos/poster_texas-panhandle-windmills.jpg" alt="Windmills in the Texas Panhandle" class="video-poster">
+                        <video class="video-preview" muted loop playsinline preload="metadata">
+                            <source src="./videos/2026-01-17_171421_amarillo-texas-panhandle-windmills.mp4" type="video/mp4">
+                        </video>
+                        <div class="photo-caption">Windmills in the Texas Panhandle</div>
+                    </div>
+                </div>
+                
+                <h4 class="subsection">Yellow City Street Food</h4>
+                <p>In Amarillo (the "Yellow City"), we had what might have been the tastiest vegan comfort food of the trip. Not fast food—just solid, well-made food. Worth a stop if you're passing through.</p>
+                
+                <h4 class="subsection">Cadillac Ranch</h4>
+                <p>Stopped to see the Cadillacs stuck in the ground. Made for a cool picture. Grab a spray can, add your mark, move on. Classic Route 66 stuff.</p>
+                
+                <div class="photo-grid triple">
+                    <div class="photo-card video-card">
+                        <img src="./videos/poster_welcome-to-new-mexico.jpg" alt="Welcome to New Mexico" class="video-poster">
+                        <video class="video-preview" muted loop playsinline preload="metadata">
+                            <source src="./videos/2026-01-17_202024_tucumcari-welcome-to-new-mexico.mp4" type="video/mp4">
+                        </video>
+                        <div class="photo-caption">Welcome to New Mexico</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-17_173854_albuquerque-arrive-albuquerque-pool.png" alt="Arrive hotel pool">
+                        <div class="photo-caption">Arrive hotel pool</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-17_192852_albuquerque-food-market-albuquerque.png" alt="Food market in Albuquerque">
+                        <div class="photo-caption">Food market in Albuquerque</div>
+                    </div>
+                </div>
+                
+                <div class="photo-grid triple">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-17_192858_albuquerque-food-market-albuquerque.png" alt="Food market in Albuquerque">
+                        <div class="photo-caption">Food market in Albuquerque</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-17_193829_albuquerque-hydraulics-cars-albuquerque.png" alt="Hydraulics cars cruising">
+                        <div class="photo-caption">Hydraulics cars cruising</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-17_201037_albuquerque-hotel-albuquerque.png" alt="Hotel scene in Albuquerque">
+                        <div class="photo-caption">Hotel scene in Albuquerque</div>
+                    </div>
+                </div>
+                
+                <h4 class="subsection">Arrive Albuquerque</h4>
+                <p>By far one of the highlights of the trip. We happened to get there during an artsy pop-up—Kooler matchas, beautiful art, a secret gallery downstairs. The pool had just been refurbished. Rooms were on the smaller side, but the vibe made up for it completely.</p>
+                
+                <p>Best part: they shut down the streets on weekends. We had hot rods riding up and down all night, whistling past with the coolest cars. Just standing on the sidewalk watching them cruise by was a moment.</p>
+                
+                <p>Food hall right around the corner. Park across the road for the dogs. Really enjoyed dinner that night.</p>
+                
+                <div class="tip">If you're at Arrive on a weekend with closed streets, don't order Uber Eats. Drivers can't get through. Walk to the food hall instead.</div>
+                
+                <p>Also: the gym at Arrive was amazing. Empty. Got a great workout in.</p>
+            </div>
+        </section>
+        
+        <!-- Day 5 -->
+        <section id="day5" class="day-section fade-up visible" data-cursor-ref="ref-7kvmyrja4gw">
+            <div class="day-header">
+                <span class="day-number">DAY 05</span>
+                <span class="day-route">Albuquerque → Sedona</span>
+            </div>
+            <div class="day-content">
+                <p>Shortest driving day. Also the most visually spectacular.</p>
+                
+                <div class="photo-grid single">
+                    <div class="photo-card video-card">
+                        <img src="./videos/poster_grants-nm-cinematic.jpg" alt="Cinematic drive near Grants, NM" class="video-poster">
+                        <video class="video-preview" muted loop playsinline preload="metadata">
+                            <source src="./videos/2026-01-18_152432_grants-nm-cinematic.mp4" type="video/mp4">
+                        </video>
+                        <div class="photo-caption">Cinematic drive near Grants, NM</div>
+                    </div>
+                </div>
+                
+                <h4 class="subsection">Leaving Albuquerque</h4>
+                <p>The drive out of Albuquerque through Grants was beautiful. Classic New Mexico landscape.</p>
+                
+                <h4 class="subsection">Gallup Detour</h4>
+                <p>Stopped briefly in Gallup. Unfortunately, this was the one place we saw real poverty in a way we hadn't seen in other towns. People asking for money. Just be ready for that if you stop there.</p>
+                
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_111358_petrified-forest-noah-lenny-pose.png" alt="Noah and Lenny at Petrified Forest">
+                        <div class="photo-caption">Noah and Lenny at Petrified Forest</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_111448_petrified-forest-landscape.png" alt="Petrified Forest landscape">
+                        <div class="photo-caption">Petrified Forest landscape</div>
+                    </div>
+                </div>
+                
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_112449_petrified-forest-parents.png" alt="Parents at Petrified Forest">
+                        <div class="photo-caption">Parents at Petrified Forest</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_112616_petrified-forest-short-walk.png" alt="Short walk through Petrified Forest">
+                        <div class="photo-caption">Short walk through Petrified Forest</div>
+                    </div>
+                </div>
+                
+                <h4 class="subsection">Petrified Forest</h4>
+                <p>The Painted Desert was the first real "wow" moment of the landscape. Absolutely beautiful views. Did a quick 25-minute hike—nothing crazy, just in and out. Worth the stop for sure.</p>
+                
+                <h4 class="subsection">Winslow (The Eagles Song)</h4>
+                <p>Stopped in Winslow—the "standing on a corner" Eagles song location. Took pictures with the flatbed. Honestly, not too interesting beyond the novelty. It's cool for the historic reasons, and there's a nice park for walking the dogs, but not a trip highlight. The food there had a good veggie sandwich and gluten-free vegan options, so grab lunch if timing works out.</p>
+                
+                <div class="photo-grid single">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_135156_holbrook-az-eagles-flatbed.png" alt="Eagles flatbed in Winslow, AZ">
+                        <div class="photo-caption">Eagles flatbed in Winslow, AZ</div>
+                    </div>
+                </div>
+                
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_152147_89a-to-sedona-89a-charlie-callum-driving.png" alt="Charlie and Callum on 89A">
+                        <div class="photo-caption">Charlie and Callum on 89A</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_161751_sedona-red-rock.png" alt="Red rock views">
+                        <div class="photo-caption">Red rock views</div>
+                    </div>
+                </div>
+                
+                <h4 class="subsection">The 89A Drive</h4>
+                <p>There is literally nothing in the world that compares to this drive. Highway 89A into Sedona. The switchbacks are amazing. The views are unreal. If you do nothing else on a southwest road trip, do this drive.</p>
+                
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_162346_sedona-landscape.png" alt="Sedona landscape">
+                        <div class="photo-caption">Sedona landscape</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_162358_sedona-cal-noah-landscape.png" alt="Cal and Noah with Sedona backdrop">
+                        <div class="photo-caption">Cal and Noah with Sedona backdrop</div>
+                    </div>
+                </div>
+                
+                <div class="photo-grid">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_164001_sedona-lenny-noah-red-rock.png" alt="Lenny and Noah at red rocks">
+                        <div class="photo-caption">Lenny and Noah at red rocks</div>
+                    </div>
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-18_164552_sedona-landscape2.png" alt="Sedona evening views">
+                        <div class="photo-caption">Sedona evening views</div>
+                    </div>
+                </div>
+                
+                <h4 class="subsection">Southwest Inn</h4>
+                <p>The most beautiful place we stayed. Maybe the most beautiful hotel I've stayed at period. Incredible views. Spacious rooms. Fireplaces. Hot tub and pool. Super clean. Delicious breakfast included. I could rave about this place all day.</p>
+                
+                <p>Did a quick, basic hiking loop to get to the red rocks. No regrets. I'll share the route if I can find it.</p>
+                
+                <p>For dinner, we hit Whole Foods hot bar. Honestly perfect at that point in the trip. Everyone was tired of takeout. Roasted veggies, lots of options, everyone got what they wanted.</p>
+                
+                <div class="tip">Whole Foods hot bar in Sedona is clutch if you're burned out on restaurant food.</div>
+            </div>
+        </section>
+        
+        <!-- Day 6 -->
+        <section id="day6" class="day-section fade-up visible" data-cursor-ref="ref-qa146wwhdq7">
+            <div class="day-header">
+                <span class="day-number">DAY 06</span>
+                <span class="day-route">Sedona → Murrieta</span>
+            </div>
+            <div class="day-content">
+                <div class="photo-grid triple">
+                    <div class="photo-card">
+                        <img src="./videos/2026-01-19_080318_sedona-cozy-charlie-southwest-inn.png" alt="Cozy Charlie at Southwest Inn">
+                        <div class="photo-caption">Cozy Charlie at Southwest Inn</div>
+                    </div>
+                    <div class="photo-card video-card">
+                        <img src="./videos/poster_blythe-hitting-4k.jpg" alt="Hitting 4,000 km in Blythe, CA" class="video-poster">
+                        <video class="video-preview" muted loop playsinline preload="metadata">
+                            <source src="./videos/2026-01-19_195249_blythe-ca-hitting-4k.mp4" type="video/mp4">
+                        </video>
+                        <div class="photo-caption">Hitting 4,000 km in Blythe, CA</div>
+                    </div>
+                    <div class="photo-card video-card">
+                        <img src="./videos/poster_lenny-car-roadtrip.jpg" alt="Lenny on the trip" class="video-poster">
+                        <video class="video-preview" muted loop playsinline preload="metadata">
+                            <source src="./videos/2026-01-19_224245_murrieta-lenny-car-roadtrip.mp4" type="video/mp4">
+                        </video>
+                        <div class="photo-caption">Lenny on the trip</div>
+                    </div>
+                </div>
+                
+                <p>Final push. Hit 4,000 km on this leg. Total trip: about 4,400 km.</p>
+                
+                <p>Quick note about Joshua Tree: we passed through but didn't stop for long. The original plan had a Jeep tour in Sedona, and I'm very grateful we didn't book it. No appointments meant no rushing. The only thing we aimed for was arriving before sundown. That's the move—keep it flexible.</p>
+                
+                <p>Got a car wash after leaving the winter behind. Very satisfying.</p>
+                
+                <p>The drive through Palm Springs was pretty cool too.</p>
+                
+                <p>And then we made it. Dogs on warm pavement. California sun. Month-long stay ahead.</p>
+            </div>
+        </section>
+        
+        <!-- Best Moments Section -->
+        <section class="featured-section fade-up visible" data-cursor-ref="ref-kxk7x9uzbar">
+            <h3 class="featured-title" data-cursor-ref="ref-7x1t303rsau">The Moments That Stuck</h3>
+            <ul data-cursor-ref="ref-0ej8zcmebj1t">
+                <li data-cursor-ref="ref-6sg2itffpv8"><strong data-cursor-ref="ref-82sio2d0n5">The bar in St. Louis</strong> — Sitting with my mom over non-alcoholic drinks, just talking about life. Simple and rare.</li>
+                <li data-cursor-ref="ref-90qbxcfs4fl"><strong data-cursor-ref="ref-d6zbisei2d">Cars on Route 66</strong> — The whole backstory, the Mater truck, the guy who could turn his legs backwards. Real American roadside history.</li>
+                <li data-cursor-ref="ref-2pjbl0flrt8"><strong data-cursor-ref="ref-7pgkv6azgc6">Hot rods in Albuquerque</strong> — Standing on a closed street watching vintage cars cruise past at night. Felt like a movie.</li>
+                <li data-cursor-ref="ref-zwo5i66gav"><strong data-cursor-ref="ref-lpdl0yttkk">89A into Sedona</strong> — Nothing compares. Drive it at least once.</li>
+                <li data-cursor-ref="ref-bp7cbtafuf9"><strong data-cursor-ref="ref-mv3n8gd9cb">Suzanne's / Queen's Bee in Joplin</strong> — Unexpected best meal of the trip. Fresh, huge, dog-friendly.</li>
+            </ul>
+        </section>
+        
+        <!-- What I'd Do Differently -->
+        <section class="day-section fade-up visible" data-cursor-ref="ref-b97s8q57gv">
+            <div class="day-header">
+                <span class="day-number">NOTES</span>
+                <span class="day-route">What I'd Do Differently</span>
+            </div>
+            <div class="day-content">
+                <ul>
+                    <li><strong>Skip the Route 66 audio guide.</strong> We paid $30 and it wasn't great because we weren't hitting every single stop. The Grand Canyon audio tour we'd done before was much better.</li>
+                    <li><strong>No appointments.</strong> We almost booked a Jeep tour in Sedona. So glad we didn't. Rushing to make a time slot would've ruined the flexibility that made this trip work.</li>
+                    <li><strong>Check tire pressure after entering warm states.</strong> Tires can over-pressurize from cold-to-hot changes. I had to deflate a bit once we got to Arizona.</li>
+                    <li><strong>We overpacked.</strong> With the dogs it's hard not to—beds, food, supplies—but we brought way more than we needed. Luggage cart every day handled it, but still.</li>
+                    <li><strong>Bring protein.</strong> Fairlife protein drinks, peanut butter sandwiches as backup, bagged popcorn. These saved us when options were limited.</li>
+                    <li><strong>Snow tires were fine.</strong> They were older (4 years), we didn't hit much winter weather after the first day, and they're due for replacement anyway. No regrets.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Copy This Trip -->
+        <section class="day-section fade-up visible" data-cursor-ref="ref-f4bhysx27l">
+            <div class="day-header">
+                <span class="day-number">ITINERARY</span>
+                <span class="day-route">If You Want to Copy This Trip</span>
+            </div>
+            <div class="day-content">
+                <table class="itinerary">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Route</th>
+                            <th>Sleep</th>
+                            <th>Eat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Kemble → Sarnia (278 km)</td>
+                            <td>Hampton Inn Sarnia</td>
+                            <td>Paddy Flaherty's</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Sarnia → St. Louis (990 km)</td>
+                            <td>Aloft St. Louis Cortex</td>
+                            <td>Red Onion Cafe (Galena)</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>St. Louis → Oklahoma City (824 km)</td>
+                            <td>Fordson Hotel</td>
+                            <td>Queen's Bee (Joplin), Loaded Bowls</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Oklahoma City → Albuquerque (879 km)</td>
+                            <td>Arrive Albuquerque</td>
+                            <td>Yellow City Street Food</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Albuquerque → Sedona (660 km)</td>
+                            <td>Southwest Inn Sedona</td>
+                            <td>Whole Foods (Sedona)</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Sedona → Murrieta (781 km)</td>
+                            <td>—</td>
+                            <td>The Dez</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <p><strong>Total: ~4,400 km over 6 days</strong></p>
+                <p>Don't miss: Cars on Route 66 (Galena, KS), Cadillac Ranch (Amarillo), Petrified Forest, 89A to Sedona.</p>
+            </div>
+        </section>
+        
+        <!-- Closing -->
+        <section class="fade-up visible" style="margin-top: 3rem;" data-cursor-ref="ref-fiyv4ktt7dw">
+            <p data-cursor-ref="ref-j8ndz4y034q">There'll be a follow-up to this—we're doing the return trip and I'll document what we do differently. But for now: 4,400 km of road behind us, a month of California ahead, and the dogs finally getting to sprawl in the sun.</p>
+            <p data-cursor-ref="ref-paxbe4e994">No regrets. Would absolutely do it again.</p>
+        </section>
+        
+        <!-- Quality Pass -->
+        <section class="quality-pass fade-up visible" data-cursor-ref="ref-7jib2zt2gyh">
+            <h3 style="font-family: 'Syncopate', sans-serif; font-size: 1rem; letter-spacing: 0.15em; color: var(--vapor-cyan); margin-bottom: 2rem;" data-cursor-ref="ref-6nq55a3cx1a">// QUALITY PASS</h3>
+            
+            <div class="quality-section">
+                <h4 class="quality-title">Fact Check List</h4>
+                <ul>
+                    <li>Suzanne's / Queen's Bee location: [verified — Suzanne's Natural Foods / Queen's Bee Coffee and Creperie, 3106 S. Connecticut Ave, Joplin, MO]</li>
+                    <li>Indianapolis bridge/park stop: [verified — White River State Park with Washington Street Bridge, near Indianapolis Zoo]</li>
+                    <li>The route/link for the Sedona hike we did: [TBD — will add if I find it]</li>
+                    <li>Winslow vs. actual location of Eagles "corner" photo op: [verified — it's Winslow, AZ]</li>
+                </ul>
+            </div>
+            
+            <div class="quality-section">
+                <h4 class="quality-title">Alternate Hooks</h4>
+                
+                <div class="alt-hook">
+                    <div class="alt-hook-label">Version 2 — More Comedic:</div>
+                    My mom made me leave early because of the weather forecast. Six days and 4,400 km later, I was watching my dogs refuse to move from warm California pavement while I deflated our over-pressurized snow tires. Moms: 1, Me: Also 1, because this trip was incredible.
+                </div>
+                
+                <div class="alt-hook">
+                    <div class="alt-hook-label">Version 3 — More Cinematic:</div>
+                    The trucks stretched to the horizon at the Canadian border, brake lights blinking in the grey afternoon snow. A week later, I stood in the Arizona desert watching hot rods cruise past on a closed street in Albuquerque, and I understood why people do Route 66 the slow way.
+                </div>
+            </div>
+            
+            <div class="quality-section">
+                <h4 class="quality-title">Social Captions</h4>
+                <div class="social-caption">1. 4,400 km. 6 days. 2 dogs who behaved better than expected.</div>
+                <div class="social-caption">2. Drove from a Canadian snowstorm to California sunshine via Route 66. The 89A into Sedona was the highlight. Nothing else comes close.</div>
+                <div class="social-caption">3. Best meal of the road trip was at a health food store I'd never heard of. Best moment was just sitting at a hotel bar with my mom.</div>
+                <div class="social-caption">4. Hot rods on closed streets at midnight. Cadillacs stuck in the ground. A diner in a converted truck factory. Route 66 delivers.</div>
+                <div class="social-caption">5. If you're doing the Southwest: take 89A into Sedona, stay at the Southwest Inn, skip the audio tour, and don't book anything that makes you rush.</div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer data-cursor-ref="ref-hnjqvonfofh">
+        <p class="footer-text" data-cursor-ref="ref-vw1f9cex2b">© 2026 NOAH DEBRINCAT</p>
+        <a href="/" class="footer-back" data-cursor-ref="ref-8uwxw5yu35i">← BACK TO MAIN SITE</a>
+    </footer>
+    
+    <!-- Scroll Animation -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Netflix-style hover video previews
+        document.querySelectorAll('.video-card').forEach(card => {
+            const video = card.querySelector('.video-preview');
+            if (!video) return;
+
+            const playVideo = () => {
+                video.currentTime = 0;
+                video.play().catch(() => {});
+            };
+
+            const pauseVideo = () => {
+                video.pause();
+                video.currentTime = 0;
+            };
+
+            card.addEventListener('mouseenter', playVideo);
+            card.addEventListener('mouseleave', pauseVideo);
+            card.addEventListener('focusin', playVideo);
+            card.addEventListener('focusout', pauseVideo);
+        });
+    </script>
+
+
+<div data-cursor-link-preview="true" style="position: fixed; bottom: 4px; left: 4px; max-width: 60%; padding: 2px 8px; background: rgba(30, 30, 30, 0.9); color: rgba(255, 255, 255, 0.9); font-size: 12px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; border-radius: 4px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; z-index: 2147483646; pointer-events: none; opacity: 0; transition: opacity 0.15s;">file:///</div></body></html>
