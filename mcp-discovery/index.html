@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Pack -->
+    <title>I Built an MCP That Forces Me to Do Product Discovery (Even When I Don't Want To) | Noah Debrincat</title>
+    <meta name="description" content="I turned an entire product discovery framework into a Model Context Protocol (MCP). A full protocol that my AI helper uses to guide me through discovery, even when I'm reluctant.">
+    <meta name="author" content="Noah Debrincat">
+    <meta name="keywords" content="MCP, Model Context Protocol, product discovery, product management, AI tools, Curebase, discovery flywheel">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://noahdebrincat.com/mcp-discovery/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="I Built an MCP That Forces Me to Do Product Discovery (Even When I Don't Want To)">
+    <meta property="og:description" content="I turned an entire product discovery framework into a Model Context Protocol (MCP). A full protocol that my AI helper uses to guide me through discovery, even when I'm reluctant.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://noahdebrincat.com/mcp-discovery/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://noahdebrincat.com/mcp-discovery/images/after.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="I Built an MCP That Forces Me to Do Product Discovery (Even When I Don't Want To)">
+    <meta name="twitter:description" content="I turned an entire product discovery framework into a Model Context Protocol (MCP). A full protocol that my AI helper uses to guide me through discovery, even when I'm reluctant.">
+    <meta name="twitter:image" content="https://noahdebrincat.com/mcp-discovery/images/after.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --vapor-pink: #ff71ce;
+            --vapor-blue: #01cdfe;
+            --vapor-purple: #b967ff;
+            --vapor-cyan: #05ffa1;
+            --vapor-yellow: #fffb96;
+            --vapor-orange: #ff6b35;
+            --deep-purple: #1a0a2e;
+            --midnight: #0d0221;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--midnight);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        /* Subtle Scanline Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.05) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        /* Top Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(13, 2, 33, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 113, 206, 0.2);
+        }
+        
+        .nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-back {
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-back:hover {
+            color: var(--vapor-pink);
+            text-shadow: 0 0 15px rgba(255, 113, 206, 0.5);
+        }
+        
+        /* Hero Header */
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: 
+                linear-gradient(180deg, 
+                    rgba(185, 103, 255, 0.3) 0%, 
+                    rgba(255, 113, 206, 0.15) 30%,
+                    transparent 60%,
+                    var(--midnight) 100%
+                ),
+                linear-gradient(135deg, var(--deep-purple) 0%, var(--midnight) 100%);
+            position: relative;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, var(--midnight));
+            pointer-events: none;
+        }
+        
+        .hero-label {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            color: var(--vapor-cyan);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            text-shadow: 
+                0 0 10px var(--vapor-pink),
+                0 0 30px var(--vapor-pink),
+                3px 3px 0 var(--vapor-blue);
+            max-width: 800px;
+        }
+        
+        /* Context Box */
+        .context-box {
+            display: flex;
+            gap: 2rem;
+            max-width: 500px;
+            margin: 2rem auto 0;
+            padding: 1rem 2rem;
+            background: rgba(26, 10, 46, 0.8);
+            border: 1px solid rgba(255, 113, 206, 0.25);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .context-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue), var(--vapor-purple));
+        }
+        
+        .context-item {
+            text-align: center;
+        }
+        
+        .context-label {
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+        
+        .context-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95rem;
+            color: var(--vapor-cyan);
+        }
+        
+        /* Main Content */
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .content strong {
+            color: var(--vapor-cyan);
+        }
+        
+        .hook {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(185, 103, 255, 0.08);
+            border-left: 3px solid var(--vapor-pink);
+        }
+        
+        /* Section Headers */
+        .subsection {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--vapor-purple);
+            letter-spacing: 0.1em;
+            margin: 2.5rem 0 1rem;
+            text-transform: uppercase;
+        }
+        
+        /* Before/After Comparison */
+        .comparison {
+            margin: 3rem 0;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .comparison-item {
+            background: rgba(26, 10, 46, 0.6);
+            border: 1px solid rgba(185, 103, 255, 0.2);
+            overflow: hidden;
+        }
+        
+        .comparison-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .comparison-label {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--text-muted);
+            padding: 0.75rem 1rem;
+            background: rgba(13, 2, 33, 0.9);
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+        
+        .comparison-label.before {
+            color: var(--vapor-orange);
+        }
+        
+        .comparison-label.after {
+            color: var(--vapor-cyan);
+        }
+        
+        /* Featured Section */
+        .featured-section {
+            background: linear-gradient(135deg, rgba(26, 10, 46, 0.9), rgba(13, 2, 33, 0.95));
+            border: 1px solid rgba(255, 113, 206, 0.2);
+            padding: 2rem;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        .featured-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue), var(--vapor-purple));
+        }
+        
+        .featured-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+            color: var(--vapor-pink);
+        }
+        
+        .featured-section p {
+            margin-bottom: 0;
+        }
+        
+        /* Lists */
+        .content ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            color: var(--text-secondary);
+        }
+        
+        .content li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .content li::marker {
+            color: var(--vapor-cyan);
+        }
+        
+        /* Tags */
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(185, 103, 255, 0.2);
+        }
+        
+        .tag {
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 113, 206, 0.15);
+            color: var(--vapor-pink);
+            border: 1px solid rgba(255, 113, 206, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--deep-purple);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 113, 206, 0.15);
+        }
+        
+        .footer-text {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--vapor-blue);
+            letter-spacing: 0.3em;
+        }
+        
+        .footer-back {
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(5, 255, 161, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-back:hover {
+            border-color: var(--vapor-pink);
+            background: rgba(255, 113, 206, 0.1);
+            color: var(--vapor-pink);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .context-box {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+        
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="/" class="nav-back">← HOME</a>
+                <a href="../blog/" class="nav-back">BLOG</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero -->
+    <header class="hero">
+        <div class="hero-label">// PRODUCT</div>
+        <h1 class="hero-title">I Built an MCP That Forces Me to Do Product Discovery (Even When I Don't Want To)</h1>
+        
+        <div class="context-box">
+            <div class="context-item">
+                <div class="context-label">Posted</div>
+                <div class="context-value">Jan 2026</div>
+            </div>
+            <div class="context-item">
+                <div class="context-label">Read Time</div>
+                <div class="context-value">4 min</div>
+            </div>
+            <div class="context-item">
+                <div class="context-label">Topic</div>
+                <div class="context-value">AI + Product</div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="content">
+        <!-- Hook -->
+        <div class="hook fade-up visible">
+            Sometimes I regret the features I've shipped. Not because they were technically wrong, but because they didn't meet any real demand.
+        </div>
+        
+        <p class="fade-up visible">Everyone says, "Talk to users" and "Test your hypotheses," but when you're deep in the code, the urge to just build the thing is hard to resist.</p>
+        
+        <p class="fade-up visible">So I did something unusual. I turned an entire product discovery framework into a Model Context Protocol (MCP). Not a chatbot. Not a library of templates. A full protocol that my AI helper uses to guide me through discovery, even when I'm reluctant.</p>
+        
+        <h4 class="subsection fade-up visible">What Makes It Different</h4>
+        
+        <p class="fade-up visible">What makes it different is how comprehensive it is. The Discovery Flywheel MCP includes nine tools that walk through a complete discovery loop: outcomes, personas, problems, hypotheses, solutions, experiments, prioritization, and risk.</p>
+        
+        <!-- MCP Tools Overview -->
+        <div class="comparison fade-up visible" style="margin: 2rem 0;">
+            <div class="comparison-item" style="max-width: 100%;">
+                <img src="./images/mcp-tools.png" alt="Discovery Flywheel MCP - Features, Tools, and Resources">
+                <div class="comparison-label" style="color: var(--vapor-purple);">THE DISCOVERY FLYWHEEL MCP</div>
+            </div>
+        </div>
+        
+        <p class="fade-up visible">When I start a new project, I run <strong>discovery_scaffold</strong>. That spins up a workspace with preloaded research tools, ready-to-fill templates, and a README that marks each stage of the process.</p>
+        
+        <p class="fade-up visible">Then the questions start.</p>
+        
+        <ul class="fade-up visible">
+            <li>"If this works, what user behavior will change?"</li>
+            <li>"What's your riskiest assumption?"</li>
+            <li>"How can you be sure this hypothesis is wrong?"</li>
+        </ul>
+        
+        <p class="fade-up visible">It's like pair programming with a product coach who won't let me get away with hand-waving.</p>
+        
+        <section class="featured-section fade-up visible">
+            <h3 class="featured-title">Even When I Just Want to Build</h3>
+            <p>Even when I just want to build, the system pushes me to pause, think, and validate.</p>
+        </section>
+        
+        <p class="fade-up visible">And it's working. I spend less time building things no one asked for, and more time understanding the people I'm actually building for.</p>
+        
+        <p class="fade-up visible">At Curebase, we've been running this approach for the last four months, and the difference in our trial orchestration product is night and day:</p>
+        
+        <!-- Before/After Comparison -->
+        <div class="comparison fade-up visible">
+            <div class="comparison-grid">
+                <div class="comparison-item">
+                    <img src="./images/before.png" alt="Legacy Study Plan interface">
+                    <div class="comparison-label before">BEFORE</div>
+                </div>
+                <div class="comparison-item">
+                    <img src="./images/after.png" alt="New Activities & Assessments interface">
+                    <div class="comparison-label after">AFTER</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Tags -->
+        <div class="tags fade-up visible">
+            <span class="tag">PRODUCT</span>
+            <span class="tag">MCP</span>
+            <span class="tag">AI</span>
+            <span class="tag">DISCOVERY</span>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">© 2026 NOAH DEBRINCAT</p>
+        <a href="../blog/" class="footer-back">← BACK TO BLOG</a>
+    </footer>
+    
+    <!-- Scroll Animation -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
