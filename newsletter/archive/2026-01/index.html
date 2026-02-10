@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>January 2026 | Noah's News</title>
+    <meta name="description" content="Road trips, side projects, and chasing rejection">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --vapor-pink: #ff71ce;
+            --vapor-blue: #01cdfe;
+            --vapor-purple: #b967ff;
+            --vapor-cyan: #05ffa1;
+            --vapor-yellow: #fffb96;
+            --vapor-orange: #ff6b35;
+            --deep-purple: #1a0a2e;
+            --midnight: #0d0221;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.75);
+            --text-muted: rgba(255, 255, 255, 0.5);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--midnight);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--deep-purple);
+            border: 2px solid var(--vapor-blue);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--deep-purple) 0%, var(--midnight) 100%);
+            padding: 40px 30px;
+            text-align: center;
+            border-bottom: 2px solid var(--vapor-purple);
+        }
+        
+        h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--vapor-cyan);
+            margin-bottom: 10px;
+        }
+        
+        .date {
+            font-size: 0.9rem;
+            color: var(--vapor-pink);
+            letter-spacing: 1px;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        h2 {
+            color: var(--vapor-blue);
+            font-size: 1.4rem;
+            margin: 30px 0 15px 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--vapor-purple);
+        }
+        
+        h2:first-of-type {
+            margin-top: 0;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+        
+        .quote-box {
+            background: rgba(185, 103, 255, 0.1);
+            border-left: 3px solid var(--vapor-purple);
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+        
+        .quote-box p {
+            margin: 0;
+            color: var(--vapor-pink);
+            line-height: 1.8;
+        }
+        
+        strong {
+            color: var(--vapor-pink);
+        }
+        
+        a {
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            border-bottom: 1px solid var(--vapor-cyan);
+        }
+        
+        a:hover {
+            color: var(--vapor-blue);
+            border-bottom-color: var(--vapor-blue);
+        }
+        
+        ul {
+            margin: 15px 0 20px 20px;
+            color: var(--vapor-pink);
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, var(--vapor-purple), var(--vapor-blue));
+            padding: 20px;
+            border-radius: 6px;
+            text-align: center;
+            margin: 30px 0 0 0;
+        }
+        
+        .cta p {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: 2px;
+        }
+        
+        footer {
+            background: var(--midnight);
+            padding: 30px;
+            text-align: center;
+            border-top: 2px solid var(--vapor-purple);
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+        
+        footer a {
+            color: var(--vapor-cyan);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: rgba(26, 10, 46, 0.6);
+            border: 1px solid var(--vapor-purple);
+            border-radius: 6px;
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--vapor-purple);
+        }
+        
+        .back-link:hover {
+            background: rgba(26, 10, 46, 0.9);
+            border-color: var(--vapor-cyan);
+            border-bottom-color: var(--vapor-cyan);
+        }
+        
+        @media (max-width: 600px) {
+            .content {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>NOAH'S NEWS</h1>
+            <p class="date">JANUARY 2026</p>
+        </header>
+        
+        <div class="content">
+            <a href="../archive/" class="back-link">← Back to Archive</a>
+            
+            <h2>🐢 Starting Slow</h2>
+            <p>Starting with the first week of the year, things took off a little slower than expected at work. The first week, I had time to catch up on some product work and plan out the quarter.</p>
+            <p>Personally, we very much chilled out. I got time to reflect on the past year and it was a nice way to ease into things.</p>
+            
+            <h2>💡 Side Project Fever Dreams</h2>
+            <p>I continue to dream about running my own thing. So far I've had the following ideas:</p>
+            
+            <div class="quote-box">
+                <p><strong>floof</strong> - headspace for pets<br>
+                <strong>Mistasho</strong> - a place to stash all your social media saves<br>
+                <strong>LaunchSignal</strong> - a productized methodology to quickly validate ideas</p>
+            </div>
+            
+            <p>This lined up with a boots on the ground effort from YC alums to recreate a beginning of year batch. I joined the batch. It's been... ok. Engagement is fairly low and I am considering whether the administrative effort added is worth the squeeze.</p>
+            
+            <p>I connected with an old colleague, Haley, and that was really nice to hear from her and clear the air.</p>
+            
+            <h2>📊 The Score Card</h2>
+            <p>Here's how far I got for each of these:</p>
+            
+            <p><strong>Floof launched.</strong> Got demotivated when I wanted to expand the infrastructure to handle multiple pets / different pets. Felt like I was going to break everything. But it did teach me how to launch an app on the App Store and add analytics.</p>
+            
+            <p><strong>Mistasho</strong> - I didn't get too far with this idea. This was my first idea for the batch, and it honestly got so little traction I just couldn't pursue it further. I set up a Google form and the only people that responded were my dad and my spouse. Rough. I also learned that linking to any of these social media apps (especially Instagram/Facebook/LinkedIn) was going to be very hard technically. I didn't even start building it. The idea was to do like ReciMe but for everything else (crafts, workouts, etc.)</p>
+            
+            <p><strong>LaunchSignal</strong> - I sprinted on this one. It felt right. It still feels right. But there is just SO MUCH and I still don't know where to start. But, the coolest thing about this was I did a full cycle launch in less than 24 hours. Landing page. TikTok ads. Launch. And I used Gemini to create some videos. It was honestly really fun. I got just a smidge more traction, but still not "PLEASE TAKE MY MONEY" level enthusiasm.</p>
+            
+            <p><strong>Some other ideas I had this month:</strong> I found a new app called SORCE that was really cool. You can apply to jobs like you swipe on Tinder. I thought this methodology would work really well with Recipes (what do you wanna eat tonight) but ALSO, (this one is a winner for sure) - apartment searching. I didn't get around to any of these.</p>
+            
+            <h2>💼 Integration Hell at Work</h2>
+            <p>Work got a bit busier in week 2. The preventix launch (our first real study on Curebase Zero - the rebuilt curebase platform) required a release on Feb 2. (Spoiler: we didn't make that release.) But work was absolutely swamped with racing to this. We thought we got a headstart on integration hell, but the bottom line is when you're in integration hell, YOU'LL know it.</p>
+            
+            <h2>🚗 The Epic Road Trip</h2>
+            <p>All of this was fairly overshadowed by the <strong>road trip of a lifetime</strong> across North America from Owen Sound to Murrieta, California. We had many hours of planning leading to our departure on Jan 19. It all happened because my spouse refused to put our little dog Charlie under the plane. My parents came with us. It was honestly awesome and I feel a lot of gratitude for the opportunity to have done it.</p>
+            
+            <h2>💪 Staying Consistent</h2>
+            <p>Throughout this time I was staying strong and consistent on workouts. Trying to hit 1600 calories per day on average. Once we arrive in California, that started to slip a bit. But I'm not wallowing too much in it. I wake up every day and do my best, but never stopped myself from enjoyment garnered through a Bundt cake haha.</p>
+            
+            <h2>🎸 Building Networks</h2>
+            <p>I also saw a reel by a fairly famous musician who explained if he were to redo everything from the start, how he would do it. And one tip he had was to get a skill that many musicians needed (photography, production, etc) and offer it to as many people as possible for super cheap or free to grow a network. This inspired me to offer landing page building to my network of builders in Owen Sound. And that's how <strong>knot-audio connection</strong> came to be! I revamped their website pre-launch! Still in process, but that whole experience taught me about Content Management Systems, CMS and TinaCMS. A super helpful new tool for my tool belt and keen to help with other landing page builds in the future as well.</p>
+            
+            <p>I found out that my best friend is gonna be a dad! That's also very cool.</p>
+            
+            <h2>☀️ California Dreaming</h2>
+            <p>Fast forward to California, it's been amazing here. It's sunny and warm every single day. Being with my parents and Callum and Lenny and Charlie has been AWESOME. I've gone for lots of hikes and done some really special day trips to Catalina Island, Coronado Island/San Diego, Oceanside for Whale Watching when my brother John visited. Once again, there is not enough gratitude in the world for me to express how I feel about this trip.</p>
+            
+            <h2>🏋️ METROFLEX: An Experience</h2>
+            <p>One funny thing is that Callum and I have been going to a gym called METROFLEX. It's hard to describe in words what this gym is like. But here's an attempt:</p>
+            
+            <ul>
+                <li>80-year-old vintage equipment</li>
+                <li>Men with forearms the size of both of my legs put together</li>
+                <li>Women squatting 4x my body weight</li>
+                <li>Ratio of 1 American flag per sq ft (including two large ones hanging off the back of the owner's lifted F150)</li>
+                <li>Heavy metal music playing at MAX db</li>
+            </ul>
+            
+            <p>So why did I force Callum into this place? Well it was a good deal. And... they have just as much exercise equipment outside as they do inside. So honestly the fresh air is super nice. Very California. Cal has learned to love it.</p>
+            
+            <h2>✂️ The Barber Shop Story</h2>
+            <p>I also had a funny experience at a barber shop in Murrieta. A young Christian guy was cutting my hair and to summarize the conversation: he started by telling me how much he wanted to travel outside the USA. Which escalated to me finding out it was because he wanted to see women around the world. Which I encouraged because yes lots of cool people to meet in Europe and other places, which then evolved into him saying he was mostly into Latinas (face palm because the man is literally an hour drive from Mexico, and the Latina population in San Diego is probably one of the highest in the world, but the man still wants to "travel"). It only got better when I learned he was planning on a trip to Bali later that year and 1. Didn't have a passport (or plans to get one) and 2. Had no idea that passports expire.</p>
+            
+            <p>Man gave an amazing haircut. He told me to look for a barber back home that was good with shears. Man didn't know that in Owen Sound I'd be lucky to find a barber at all, let alone one good with shears lol.</p>
+            
+            <h2>⛪ Mega Church Culture</h2>
+            <p>This sort of brought me to the additional crazy realization. On either side of METROFLEX, there are 2 MEGA CHURCHES. I've never experienced such a large group of people where their life was so influenced by church. It truly is so engrained into American culture in a way I have never seen in Canada. This new age mega church feels... a little dangerous, but mostly fascinating to me. Like think of it this way, the places these churches were in are the size of grocery stores (in the same strip mall as a grocery store) with grocery store size parking lots, and the Sunday where Cal and I went to the gym, every. Single. Spot. Was taken. They were shuttling people around in golf carts!!</p>
+            
+            <h2>🌅 The West Coast Schedule</h2>
+            <p>I've been working from 5:30am to 2pm on the west coast, and it's been amazing. When I get off at 2pm I have the whole day ahead of me and I commonly will take the family out for a nice warm hike. The number of hours of sun makes me feel so energized.</p>
+            
+            <p>Oh, and I've been building out more of <a href="https://noahdebrincat.com">noahdebrincat.com</a>. It's becoming more robust for sure!</p>
+            
+            <h2>📅 What's Next</h2>
+            <p>Sadly, we do have to return to the cold soon. Coming up next month:</p>
+            
+            <ul>
+                <li>Work trip to Orlando</li>
+                <li>Our road trip back to Canada</li>
+                <li>Hopefully go live / preventix launch</li>
+            </ul>
+            
+            <h2>🎯 Goals Update</h2>
+            <p>Little update on my goals for the year: miniatures are back in Canada so not much progress there.</p>
+            
+            <div class="cta">
+                <p>CHASING REJECTION!! 🚀</p>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Noah Debrincat | Lead PM @ Curebase | YC Alum</p>
+            <p><a href="https://noahdebrincat.com">noahdebrincat.com</a></p>
+            <p style="font-size: 0.85rem; margin-top: 15px;">
+                <a href="../archive/">View all newsletters →</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
