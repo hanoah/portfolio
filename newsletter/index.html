@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter | Noah Debrincat</title>
+    <meta name="description" content="Subscribe to Noah Debrincat's newsletter">
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --vapor-pink: #ff71ce;
+            --vapor-blue: #01cdfe;
+            --vapor-purple: #b967ff;
+            --vapor-cyan: #05ffa1;
+            --vapor-yellow: #fffb96;
+            --vapor-orange: #ff6b35;
+            --deep-purple: #1a0a2e;
+            --midnight: #0d0221;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.75);
+            --text-muted: rgba(255, 255, 255, 0.5);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--midnight);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Animated gradient background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 50%, rgba(185, 103, 255, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(1, 205, 254, 0.1) 0%, transparent 50%);
+            animation: gradientShift 15s ease infinite;
+            z-index: 0;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 500px;
+            width: 100%;
+            background: rgba(26, 10, 46, 0.8);
+            border: 2px solid var(--vapor-blue);
+            border-radius: 16px;
+            padding: 48px 40px;
+            box-shadow: 0 8px 32px rgba(1, 205, 254, 0.2),
+                        0 0 60px rgba(185, 103, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, var(--vapor-cyan), var(--vapor-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 14px 16px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            background: rgba(13, 2, 33, 0.6);
+            border: 2px solid var(--vapor-purple);
+            border-radius: 8px;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        
+        input[type="email"]:focus {
+            border-color: var(--vapor-cyan);
+            box-shadow: 0 0 20px rgba(5, 255, 161, 0.3);
+            background: rgba(13, 2, 33, 0.8);
+        }
+        
+        input[type="email"]::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 16px 24px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, var(--vapor-blue), var(--vapor-purple));
+            border: none;
+            border-radius: 8px;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .submit-btn:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(1, 205, 254, 0.4);
+        }
+        
+        .submit-btn:active:not(:disabled) {
+            transform: translateY(0);
+        }
+        
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .submit-btn.loading {
+            background: var(--vapor-purple);
+        }
+        
+        .submit-btn.loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            margin-left: -10px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .message {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .message.success {
+            background: rgba(5, 255, 161, 0.1);
+            border: 1px solid var(--vapor-cyan);
+            color: var(--vapor-cyan);
+        }
+        
+        .message.error {
+            background: rgba(255, 113, 206, 0.1);
+            border: 1px solid var(--vapor-pink);
+            color: var(--vapor-pink);
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 36px 24px;
+            }
+            
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>NOAH'S NEWS</h1>
+        <p class="subtitle">You wanna know what I'm up to every month? Ok, I'll tell ya...</p>
+        
+        <form id="newsletter-form">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    placeholder="you@example.com"
+                    required
+                    autocomplete="email"
+                >
+            </div>
+            
+            <button type="submit" class="submit-btn" id="submit-btn">
+                <span id="btn-text">Subscribe</span>
+            </button>
+        </form>
+        
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        // ============================================================================
+        // SETUP INSTRUCTIONS:
+        // ============================================================================
+        // 1. Create a Google Sheet with two columns: "Timestamp" and "Email"
+        // 2. In your Google Sheet, go to Extensions → Apps Script
+        // 3. Delete the default code and paste the following function:
+        //
+        //    function doPost(e) {
+        //      try {
+        //        const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+        //        const data = JSON.parse(e.postData.contents);
+        //        const email = data.email;
+        //        
+        //        // Validate email
+        //        if (!email || !email.includes('@')) {
+        //          return ContentService.createTextOutput(JSON.stringify({
+        //            success: false,
+        //            message: 'Invalid email address'
+        //          })).setMimeType(ContentService.MimeType.JSON);
+        //        }
+        //        
+        //        // Append to sheet
+        //        const timestamp = new Date();
+        //        sheet.appendRow([timestamp, email]);
+        //        
+        //        return ContentService.createTextOutput(JSON.stringify({
+        //          success: true,
+        //          message: 'Successfully subscribed!'
+        //        })).setMimeType(ContentService.MimeType.JSON);
+        //        
+        //      } catch (error) {
+        //        return ContentService.createTextOutput(JSON.stringify({
+        //          success: false,
+        //          message: 'Error: ' + error.toString()
+        //        })).setMimeType(ContentService.MimeType.JSON);
+        //      }
+        //    }
+        //
+        // 4. Click "Deploy" → "New deployment"
+        // 5. Select type: "Web app"
+        // 6. Execute as: "Me"
+        // 7. Who has access: "Anyone"
+        // 8. Click "Deploy" and copy the web app URL
+        // 9. Paste your URL below, replacing 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'
+        // ============================================================================
+        
+        const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycby1bP2mWtxwGOh6ggTHwLQ1U7H8BBu9HdRxiM2IDQQGBuOaFlQhx_eW4xZjySc89fZbiQ/exec';
+        
+        const form = document.getElementById('newsletter-form');
+        const emailInput = document.getElementById('email');
+        const submitBtn = document.getElementById('submit-btn');
+        const btnText = document.getElementById('btn-text');
+        const messageDiv = document.getElementById('message');
+        
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Validate email
+            const email = emailInput.value.trim();
+            if (!email || !isValidEmail(email)) {
+                showMessage('Please enter a valid email address', 'error');
+                return;
+            }
+            
+            // Check if webhook URL is configured
+            if (WEBHOOK_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+                showMessage('Newsletter signup is not configured yet. Please set up the Google Apps Script webhook.', 'error');
+                return;
+            }
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+            btnText.textContent = '';
+            messageDiv.classList.remove('show');
+            
+            try {
+                // Try with CORS first (if your Apps Script has proper CORS headers)
+                let response;
+                try {
+                    response = await fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ email })
+                    });
+                    
+                    const result = await response.json();
+                    
+                    if (result.success) {
+                        showMessage(result.message || 'Successfully subscribed! Now we wait.', 'success');
+                        emailInput.value = '';
+                    } else {
+                        showMessage(result.message || 'Something went wrong. Please try again.', 'error');
+                    }
+                } catch (corsError) {
+                    // If CORS fails, fallback to no-cors mode
+                    // Note: With no-cors, we can't read the response, so we assume success
+                    console.log('CORS failed, trying no-cors mode:', corsError);
+                    await fetch(WEBHOOK_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ email })
+                    });
+                    
+                    // If we get here without throwing, assume success
+                    showMessage('Successfully subscribed! Now we wait.', 'success');
+                    emailInput.value = '';
+                }
+                
+            } catch (error) {
+                console.error('Subscription error:', error);
+                showMessage('Something went wrong. Please try again later.', 'error');
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+                btnText.textContent = 'Subscribe';
+            }
+        });
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        function showMessage(text, type) {
+            messageDiv.textContent = text;
+            messageDiv.className = `message ${type}`;
+            setTimeout(() => {
+                messageDiv.classList.add('show');
+            }, 10);
+        }
+    </script>
+</body>
+</html>
