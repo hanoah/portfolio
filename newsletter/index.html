@@ -221,16 +221,6 @@
             color: var(--vapor-cyan);
         }
         
-        .message.success a {
-            color: var(--vapor-cyan);
-            text-decoration: underline;
-            font-weight: 600;
-        }
-        
-        .message.success a:hover {
-            color: var(--text-primary);
-        }
-        
         .message.error {
             background: rgba(255, 113, 206, 0.1);
             border: 1px solid var(--vapor-pink);
@@ -370,7 +360,7 @@
                     const result = await response.json();
                     
                     if (result.success) {
-                        showMessage(result.message || 'Successfully subscribed! Now we wait. <a href="./archive/">Check out past newsletters →</a>', 'success', true);
+                        showMessage(result.message || 'Successfully subscribed! Now we wait.', 'success');
                         emailInput.value = '';
                     } else {
                         showMessage(result.message || 'Something went wrong. Please try again.', 'error');
@@ -389,7 +379,7 @@
                     });
                     
                     // If we get here without throwing, assume success
-                    showMessage('Successfully subscribed! Now we wait. <a href="./archive/">Check out past newsletters →</a>', 'success', true);
+                    showMessage('Successfully subscribed! Now we wait.', 'success');
                     emailInput.value = '';
                 }
                 
@@ -409,12 +399,8 @@
             return emailRegex.test(email);
         }
         
-        function showMessage(text, type, allowHTML = false) {
-            if (allowHTML) {
-                messageDiv.innerHTML = text;
-            } else {
-                messageDiv.textContent = text;
-            }
+        function showMessage(text, type) {
+            messageDiv.textContent = text;
             messageDiv.className = `message ${type}`;
             setTimeout(() => {
                 messageDiv.classList.add('show');
