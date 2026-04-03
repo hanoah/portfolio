@@ -41,5 +41,8 @@ prompt
 *.sh
 road-trip/voice-transcript/
 
+# Build artifacts
+mcp-discovery.zip
+
 # Cursor
 .cursor/

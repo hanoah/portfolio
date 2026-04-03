@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Pack -->
+    <title>Five Years at Curebase: What We Built | Noah Debrincat</title>
+    <meta name="description" content="After five years at Curebase, I'm reflecting on what we built together, the people who made it possible, and what's next.">
+    <meta name="author" content="Noah Debrincat">
+    <meta name="keywords" content="Curebase, clinical trials, product management, startup, eClinical, career, reflection">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://noahdebrincat.com/five-years-curebase/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Five Years at Curebase: What We Built">
+    <meta property="og:description" content="After five years at Curebase, I'm reflecting on what we built together, the people who made it possible, and what's next.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://noahdebrincat.com/five-years-curebase/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://noahdebrincat.com/five-years-curebase/images/timeline.png">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Five Years at Curebase: What We Built">
+    <meta name="twitter:description" content="After five years at Curebase, I'm reflecting on what we built together, the people who made it possible, and what's next.">
+    <meta name="twitter:image" content="https://noahdebrincat.com/five-years-curebase/images/timeline.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Syncopate:wght@400;700&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --vapor-pink: #ff71ce;
+            --vapor-blue: #01cdfe;
+            --vapor-purple: #b967ff;
+            --vapor-cyan: #05ffa1;
+            --vapor-yellow: #fffb96;
+            --vapor-orange: #ff6b35;
+            --deep-purple: #1a0a2e;
+            --midnight: #0d0221;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.85);
+            --text-muted: rgba(255, 255, 255, 0.6);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--midnight);
+            color: var(--text-primary);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05),
+                rgba(0, 0, 0, 0.05) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            background: rgba(13, 2, 33, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 113, 206, 0.2);
+        }
+        
+        .nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-back {
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-back:hover {
+            color: var(--vapor-pink);
+            text-shadow: 0 0 15px rgba(255, 113, 206, 0.5);
+        }
+        
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            background: 
+                linear-gradient(180deg, 
+                    rgba(185, 103, 255, 0.3) 0%, 
+                    rgba(255, 113, 206, 0.15) 30%,
+                    transparent 60%,
+                    var(--midnight) 100%
+                ),
+                linear-gradient(135deg, var(--deep-purple) 0%, var(--midnight) 100%);
+            position: relative;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, var(--midnight));
+            pointer-events: none;
+        }
+        
+        .hero-label {
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            color: var(--vapor-cyan);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            text-shadow: 
+                0 0 10px var(--vapor-pink),
+                0 0 30px var(--vapor-pink),
+                3px 3px 0 var(--vapor-blue);
+            max-width: 800px;
+        }
+        
+        .context-box {
+            display: flex;
+            gap: 2rem;
+            max-width: 500px;
+            margin: 2rem auto 0;
+            padding: 1rem 2rem;
+            background: rgba(26, 10, 46, 0.8);
+            border: 1px solid rgba(255, 113, 206, 0.25);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .context-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--vapor-pink), var(--vapor-blue), var(--vapor-purple));
+        }
+        
+        .context-item {
+            text-align: center;
+        }
+        
+        .context-label {
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+        
+        .context-value {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.95rem;
+            color: var(--vapor-cyan);
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .content p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .content strong {
+            color: var(--vapor-cyan);
+        }
+        
+        .section-header {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--vapor-pink);
+            letter-spacing: 0.1em;
+            margin: 3.5rem 0 1.5rem;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 0 var(--vapor-purple);
+        }
+        
+        .subsection {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--vapor-purple);
+            letter-spacing: 0.1em;
+            margin: 2.5rem 0 1rem;
+            text-transform: uppercase;
+        }
+        
+        .comparison {
+            margin: 2.5rem 0;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .comparison-item {
+            background: rgba(26, 10, 46, 0.6);
+            border: 1px solid rgba(185, 103, 255, 0.2);
+            overflow: hidden;
+        }
+        
+        .comparison-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .comparison-label {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--text-muted);
+            padding: 0.75rem 1rem;
+            background: rgba(13, 2, 33, 0.9);
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+        
+        .comparison-label.before {
+            color: var(--vapor-orange);
+        }
+        
+        .comparison-label.after {
+            color: var(--vapor-cyan);
+        }
+        
+        .media-placeholder {
+            margin: 2.5rem 0;
+            border: 2px dashed rgba(185, 103, 255, 0.4);
+            padding: 3rem 2rem;
+            text-align: center;
+            background: rgba(26, 10, 46, 0.3);
+        }
+        
+        .media-placeholder .placeholder-label {
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--vapor-purple);
+            letter-spacing: 0.15em;
+        }
+        
+        .media-placeholder .placeholder-hint {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+        
+        .full-width-media {
+            margin: 2.5rem 0;
+            background: rgba(26, 10, 46, 0.6);
+            border: 1px solid rgba(185, 103, 255, 0.2);
+            overflow: hidden;
+        }
+
+        .full-width-media img,
+        .full-width-media video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .video-card {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .video-poster {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: opacity 150ms ease;
+        }
+
+        .video-preview {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 120ms ease;
+        }
+
+        .video-card:hover .video-preview,
+        .video-card:focus-within .video-preview {
+            opacity: 1;
+        }
+
+        .video-card:hover .video-poster,
+        .video-card:focus-within .video-poster {
+            opacity: 0;
+        }
+
+        .video-card:hover .video-preview {
+            transform: scale(1.02);
+            transition: opacity 120ms ease, transform 400ms ease;
+        }
+
+        .media-caption {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--text-muted);
+            padding: 0.75rem 1rem;
+            background: rgba(13, 2, 33, 0.9);
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+        
+        .footnotes {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(185, 103, 255, 0.2);
+        }
+        
+        .footnotes p {
+            font-size: 0.9rem !important;
+            color: var(--text-muted) !important;
+            margin-bottom: 0.75rem !important;
+        }
+
+        .footnotes sup {
+            color: var(--vapor-pink);
+        }
+        
+        sup a {
+            color: var(--vapor-pink);
+            text-decoration: none;
+        }
+
+        sup a:hover {
+            text-shadow: 0 0 8px rgba(255, 113, 206, 0.5);
+        }
+        
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(185, 103, 255, 0.2);
+        }
+        
+        .tag {
+            font-family: 'VT323', monospace;
+            font-size: 0.9rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 113, 206, 0.15);
+            color: var(--vapor-pink);
+            border: 1px solid rgba(255, 113, 206, 0.3);
+        }
+        
+        footer {
+            background: var(--deep-purple);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 113, 206, 0.15);
+        }
+        
+        .footer-text {
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            color: var(--vapor-blue);
+            letter-spacing: 0.3em;
+        }
+        
+        .footer-back {
+            display: inline-block;
+            margin-top: 1rem;
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--vapor-cyan);
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(5, 255, 161, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .footer-back:hover {
+            border-color: var(--vapor-pink);
+            background: rgba(255, 113, 206, 0.1);
+            color: var(--vapor-pink);
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .context-box {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+        
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-links">
+                <a href="/" class="nav-back">&larr; HOME</a>
+                <a href="../blog/" class="nav-back">BLOG</a>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="hero">
+        <div class="hero-label">// REFLECTION</div>
+        <h1 class="hero-title">Five Years at Curebase: What We Built</h1>
+        
+        <div class="context-box">
+            <div class="context-item">
+                <div class="context-label">Posted</div>
+                <div class="context-value">Apr 2026</div>
+            </div>
+            <div class="context-item">
+                <div class="context-label">Read Time</div>
+                <div class="context-value">5 min</div>
+            </div>
+            <div class="context-item">
+                <div class="context-label">Topic</div>
+                <div class="context-value">Career</div>
+            </div>
+        </div>
+    </header>
+    
+    <main class="content">
+        <p class="fade-up">After five years at Curebase, I'm moving on and I want to take a minute to reflect on the awesome stuff we accomplished together, and more importantly, thank the people who made it all possible.</p>
+
+        <p class="fade-up">If you've been following along on my journey, I joined Curebase in 2021 when Tom and Storm decided, for whatever reason, they'd give a young (but eager) 24-year-old an opportunity. I started as Director of Special Projects (whatever that means), eventually evolved into Chief of Staff running the virtual site and implementing special projects with massive pharmaceutical innovation departments, and finally Product Manager, where I found my home. Five years later, I can confidently say I've grown more professionally than I ever thought possible, and that growth has everything to do with the people I got to work alongside.</p>
+
+        <h2 class="section-header fade-up">What We Built</h2>
+
+        <p class="fade-up">I've attached a timeline of what the team built over just the last year and three months, and it wasn't until I actually took a step back and looked at this that I realized how much we've done. The sheer volume of what we shipped, and the quality at which we shipped it, is incredible.</p>
+
+        <div class="full-width-media fade-up">
+            <img src="images/timeline.png" alt="Project timeline showing commits and milestones from Jan 2025 to Mar 2026">
+            <div class="media-caption">15 MONTHS OF SHIPPING</div>
+        </div>
+
+        <h3 class="subsection fade-up">The Upgraded eClinical Platform</h3>
+
+        <p class="fade-up">Storm<sup><a href="#fn1">1</a></sup> had been encouraging us to adopt USDM<sup><a href="#fn2">2</a></sup>, and between me and the rest of the team, we spent hours thinking about edge cases to match the backend to the USDM models of arms, stages, and visits. From what I know, Curebase is one of the first commercially available offerings of a USDM-native data structure for running clinical trials, and I'm really proud to have been part of that.</p>
+
+        <p class="fade-up">Curebase also recently built out IRT with a pretty robust kit workflow, and is in the process of rebuilding eConsent for maybe the third or fourth time (it's going to be better than ever, and if Storm gets his way, it'll include an AI agent that walks participants through the consenting process). We did medical coding with MedDRA and WHODrug, which is a feature that many parallel EDCs couldn't offer.</p>
+
+        <div class="full-width-media fade-up">
+            <video controls playsinline preload="metadata" poster="images/econsent-poster.jpg">
+                <source src="images/econsent-video.mp4" type="video/mp4">
+            </video>
+            <div class="media-caption">eCONSENT WITH AI AGENT</div>
+        </div>
+
+        <p class="fade-up">And then there's LogForms. My head of customer success, Cori, can tell you that this feature tests her patience, and that's putting it generously for sure. Compare that to the LogForms feature we built in the upgraded platform in about a month, and it is genuinely night and day in terms of reliability, robustness, and thoughtfulness. LogForms is definitely my redemption arc, I feel like I've come full circle.</p>
+
+        <div class="full-width-media fade-up">
+            <img src="images/logforms.png" alt="LogForms Submit All rows feature with user flow and job-to-be-done">
+            <div class="media-caption">LOGFORMS &mdash; THE REDEMPTION ARC</div>
+        </div>
+
+        <h3 class="subsection fade-up">Fixing What Used to Hurt</h3>
+
+        <p class="fade-up">Some of the most satisfying work was solving problems that were core to the legacy platform. We ran a lot of DCTs, and the timezone issues were brutal, where you wouldn't know if a timestamp belonged to a participant, a site staff user, or some mystery third timezone. In the new platform, that ambiguity is completely gone, and everything is stored in a way that makes sense. This is evidence of my growth as a product manager, but also of Curebase as an organization. We don't make the same mistake twice.</p>
+
+        <p class="fade-up">We also solved latency issues in the upgraded platform, set up Databricks for reporting queries (massive learning from the first system), built a completely new version migration approach for making changes to studies, and started using Courier instead of building messaging ourselves. And one of the coolest features in the upgraded system is that you can actually configure notifications from within the product itself, as opposed to from some third-party tool. That's something we'd never have been able to do in the legacy platform just because it wasn't built with that in mind. Once again, all growth.</p>
+
+        <div class="full-width-media fade-up">
+            <img src="images/notifications.png" alt="In-platform notification configuration with templates">
+            <div class="media-caption">CONFIGURABLE NOTIFICATIONS &mdash; BUILT INTO THE PRODUCT</div>
+        </div>
+
+        <h3 class="subsection fade-up">Emails at Scale</h3>
+
+        <p class="fade-up">This deserves its own section because the growth curve from me personally was absurd. I went from literally not understanding the difference between an email domain and an IP, or the difference between a receiving and a sending domain, to helping Walgreens send two to three million emails per month on our infrastructure. Big shout out to LB for patiently helping me learn about email deliverability, because there were some, no pun intended, ups and downs. But we're certainly on the up and up now, and I'm really proud to say that Walgreens has an incredibly high delivery rate and open rate on their emails, and all of that came through learning, iterating, and being pushed to continuously do better.</p>
+
+        <h3 class="subsection fade-up">My Own Growth</h3>
+
+        <p class="fade-up">One of the things I'm most excited about is how I've grown technically. I remember when the idea of even logging into GitHub scared me. Now I'm completely familiar with git, I can understand database structures, and I'm building my own apps full stack, which is something I'm extremely proud of.</p>
+
+        <h2 class="section-header fade-up">The People</h2>
+
+        <p class="fade-up">Some people I really want to shout out who made all of this possible.</p>
+
+        <p class="fade-up">To the engineers at Curebase, thank you for putting up with me in my early days when my acceptance criteria could have been written by a seventh grader, and honestly, a seventh grader's might have been better. I didn't really know what I was doing, but I certainly do now, and that's due to your patience, feedback, and willingness to iterate with me even when I was making things harder than they needed to be.</p>
+
+        <p class="fade-up">Quick shout out to one engineer who always found a way to make us all smile. Mr. Leonel, I don't know how you wrangled $175 Canadian dollars out of me in exchange for the equivalent of $10 in Nicaraguan monies, but those bills are framed in my office and I will never forget about them. Keep making the team smile.</p>
+
+        <p class="fade-up">To the customer success team, you guys are awesome. The prioritization meetings, the war rooms, the go-lives, I could not have done any of this without you patiently guiding me through the process and constantly advocating for the customer at Curebase.</p>
+
+        <p class="fade-up">To Tom and Storm, thank you for giving me a chance back when I was a freshly unemployed founder with questionable spreadsheet skills. Storm, you'll always be the smartest cowboy I know. I believe in your leadership, thank you for listening to me, and I know this won't be the last time we "do business." Scott, thank you for always having my back and trusting me to take on things that, in retrospect, I probably wasn't fully qualified for at the time. You guys all let me grow and flourish in ways that I needed to, and I'll be forever grateful for that.</p>
+
+        <p class="fade-up">Patrick, the recent addition to our engineering leadership, you're not afraid to roll up your sleeves, you're genuinely caring, but you know how to get the job done. I've learned a lot from you even in the short time we've worked together, and I appreciate all of that sincerely.</p>
+
+        <p class="fade-up">And to the manual QA team and Lucas, thank you for your patience with me. That's all I gotta say about that.</p>
+
+        <p class="fade-up">So many other folks to thank for this chapter, Doug, Jane, Sean, Cori, Sarah, Josh, Laura... the list goes on!</p>
+
+        <h2 class="section-header fade-up">The Reflection</h2>
+
+        <p class="fade-up">People always say that startups are a place where you can grow your skills, get opportunities you otherwise wouldn't get, work incredibly hard, and ship faster than you ever imagined was humanly possible. Curebase is absolutely evidence of that. Nothing but good things to say about my time there, and I'm genuinely rooting for the future of Curebase and all the people still building it.</p>
+
+        <h2 class="section-header fade-up">What's Next</h2>
+
+        <p class="fade-up">I'll make a separate post about this soon, but I'm joining the team at Evinova as a Product Manager for eConsent. I'm super keen for this next chapter, and I'm also super keen to be doing things a little more locally, because being boots on the ground in Toronto is going to be a big change after five years of being fully remote.</p>
+
+        <p class="fade-up">That's all I got for now. Onto the next chapter, and I'll keep you all posted.</p>
+
+        <div class="footnotes fade-up" id="footnotes">
+            <p><sup id="fn1">1</sup> One of the earliest employees at Curebase and current CEO.</p>
+            <p><sup id="fn2">2</sup> Unified Study Definitions Model, if you're wondering. It's a data standard for how clinical trial structures should be organized, and actually implementing it as a working backend is a way bigger undertaking than it sounds.</p>
+        </div>
+
+        <div class="tags fade-up">
+            <span class="tag">CUREBASE</span>
+            <span class="tag">CAREER</span>
+            <span class="tag">REFLECTION</span>
+            <span class="tag">PRODUCT</span>
+        </div>
+    </main>
+    
+    <footer>
+        <p class="footer-text">&copy; 2026 NOAH DEBRINCAT</p>
+        <a href="../blog/" class="footer-back">&larr; BACK TO BLOG</a>
+    </footer>
+    
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+        
+        document.querySelectorAll('.video-card').forEach(card => {
+            const video = card.querySelector('.video-preview');
+            if (!video) return;
+
+            const playVideo = () => {
+                video.currentTime = 0;
+                video.play().catch(() => {});
+            };
+
+            const pauseVideo = () => {
+                video.pause();
+                video.currentTime = 0;
+            };
+
+            card.addEventListener('mouseenter', playVideo);
+            card.addEventListener('mouseleave', pauseVideo);
+            card.addEventListener('focusin', playVideo);
+            card.addEventListener('focusout', pauseVideo);
+        });
+    </script>
+</body>
+</html>

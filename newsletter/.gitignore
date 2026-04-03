@@ -2,3 +2,9 @@
 email-template-*.html
 MAILING_LIST.*
 *.csv
+
+# Drafts and reference
+*-draft.md
+*-farewell.md
+ai-reference
+rag-vs-pipelines-draft.md
